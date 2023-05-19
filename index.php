@@ -3,7 +3,7 @@
 class Kalkulator
 {
     private $hasil;
-    private $sisi;
+
 
     public function __construct()
     {
@@ -46,8 +46,8 @@ class Kalkulator
 
     public function persentase($angka, $persentase)
     {
-        $hasilPersentase = ($angka * $persentase) / 100;
-        return $hasilPersentase;
+        $hasilpersentase = ($angka * $persentase) / 100;
+        return $hasilpersentase;
     }
 
     public function akarKuadrat($angka)
@@ -92,7 +92,7 @@ class Kalkulator
 
     public function hitungLuasSegitiga($alas, $tinggi)
     {
-        return (0.5 * $alas * $tinggi);
+        return 0.5 * $alas * $tinggi;
     }
 
     public function hitungPanjangSegitiga($a, $b, $c)
@@ -137,8 +137,7 @@ class Kalkulator
 
     public function hitungTip($jumlahTagihan, $persentaseTip)
     {
-        $tip = ($jumlahTagihan * $persentaseTip) / 100;
-        return $tip;
+        return ($jumlahTagihan * $persentaseTip) / 100;
     }
 
     public function hitungRataRata($data)
@@ -150,8 +149,7 @@ class Kalkulator
 
     public function hitungMemori($data)
     {
-        $total = array_sum($data);
-        return $total;
+        return array_sum($data);
     }
 
     public function hitungDesimal($angka)
@@ -180,79 +178,70 @@ class Kalkulator
     public function hitungArctan($nilai)
     {
         // Implementasi perhitungan arctan
-        $hasil = atan($nilai);
-        return $hasil;
+        return atan($nilai);
     }
 
     public function hitungCot($nilai)
     {
         // Implementasi perhitungan cot
-        $hasil = 1 / tan($nilai);
-        return $hasil;
+        return 1 / tan($nilai);
     }
 
     public function hitungSec($nilai)
     {
         // Implementasi perhitungan sec
-        $hasil = 1 / cos($nilai);
-        return $hasil;
+        return 1 / cos($nilai);
     }
 
     public function hitungCsc($nilai)
     {
         // Implementasi perhitungan csc
-        $hasil = 1 / sin($nilai);
-        return $hasil;
+        return 1 / sin($nilai);
     }
 
     public function hitungArccos($nilai)
     {
         // Implementasi perhitungan arccos
-        $hasil = acos($nilai);
-        return $hasil;
+        return acos($nilai);
     }
 
     public function hitungArcsin($nilai)
     {
         // Implementasi perhitungan arcsin
-        $hasil = asin($nilai);
-        return $hasil;
+        return asin($nilai);
     }
 
     public function hitungAnd($a, $b)
     {
         // Implementasi perhitungan operasi AND
-        $hasil = $a && $b;
-        return $hasil;
+        return $a && $b;
     }
 
     public function hitungOr($a, $b)
     {
         // Implementasi perhitungan operasi OR
-        $hasil = $a || $b;
-        return $hasil;
+        return $a || $b;
     }
 
     public function hitungNot($a)
     {
         // Implementasi perhitungan operasi NOT
-        $hasil = !$a;
-        return $hasil;
+        return !$a;
     }
 
     public function hitungXor($a, $b)
     {
         // Implementasi perhitungan operasi XOR
-        $hasil = ($a && !$b) || (!$a && $b);
-        return $hasil;
+        return ($a && !$b) || (!$a && $b);
     }
 
     public function hitungModulo($a, $b)
     {
         // Implementasi perhitungan modulo
-        $hasil = $a % $b;
-        return $hasil;
+        return $a % $b;
     }
+
+
 
     public function hitungMean($data)
     {
@@ -281,8 +270,7 @@ class Kalkulator
     {
         // Implementasi perhitungan modus
         $frekuensi = array_count_values($data);
-        $modus = array_keys($frekuensi, max($frekuensi));
-        return $modus;
+        return array_keys($frekuensi, max($frekuensi));
     }
 
     public function hitungStandarDeviasi($data)
@@ -293,16 +281,14 @@ class Kalkulator
             return pow($x - $mean, 2);
         }, $data);
         $variansi = $this->hitungMean($selisihKuadrat);
-        $standarDeviasi = sqrt($variansi);
-        return $standarDeviasi;
+        return sqrt($variansi);
     }
 
     public function hitungVarian($data)
     {
         // Implementasi perhitungan variansi
         $standarDeviasi = $this->hitungStandarDeviasi($data);
-        $varian = pow($standarDeviasi, 2);
-        return $varian;
+        return pow($standarDeviasi, 2);
     }
 
     public function hitungModus($data)
@@ -339,18 +325,14 @@ class Kalkulator
     public function hitungLCM($angka1, $angka2)
     {
         // Menggunakan rumus LCM = (a * b) / GCF(a, b)
-        // dengan GCF = Greatest Common Factor (Faktor Persekutuan Terbesar)
-        // untuk menghitung LCM
         $gcf = $this->hitungGCF($angka1, $angka2);
-        $lcm = ($angka1 * $angka2) / $gcf;
-        return $lcm;
+        return ($angka1 * $angka2) / $gcf;
     }
 
     public function hitungFraction($operasi)
     {
         // Membaca operasi pecahan dalam format "a/b + c/d"
-        // Menyimpan angka-angka dan operator dalam variabel terpisah
-        preg_match('/(\d+)\/(\d+)\s*([+\-*\/])\s*(\d+)\/(\d+)/', $operasi, $matches);
+        preg_match('#(\d+)/(\d+)\s*([+-/])\s(\d+)/(\d+)#', $operasi, $matches);
         $angka1 = $matches[1];
         $angka2 = $matches[2];
         $operator = $matches[3];
@@ -358,23 +340,20 @@ class Kalkulator
         $angka4 = $matches[5];
 
         // Menghitung hasil operasi pecahan
-        $hasil = 0;
         switch ($operator) {
             case '+':
-                $hasil = ($angka1 * $angka4 + $angka2 * $angka3) . '/' . ($angka2 * $angka4);
-                break;
+                return ($angka1 * $angka4 + $angka2 * $angka3) . '/' . ($angka2 * $angka4);
             case '-':
-                $hasil = ($angka1 * $angka4 - $angka2 * $angka3) . '/' . ($angka2 * $angka4);
-                break;
+                return ($angka1 * $angka4 - $angka2 * $angka3) . '/' . ($angka2 * $angka4);
             case '*':
-                $hasil = ($angka1 * $angka3) . '/' . ($angka2 * $angka4);
-                break;
+                return ($angka1 * $angka3) . '/' . ($angka2 * $angka4);
             case '/':
-                $hasil = ($angka1 * $angka4) . '/' . ($angka2 * $angka3);
-                break;
+                return ($angka1 * $angka4) . '/' . ($angka2 * $angka3);
+            default:
+                return "Operasi tidak valid.";
         }
-        return $hasil;
     }
+
 
     public function hitungMixedFraction($operasi)
     {
@@ -390,22 +369,18 @@ class Kalkulator
         $angka6 = $matches[7];
 
         // Menghitung hasil operasi pecahan campuran
-        $hasil = 0;
         switch ($operator) {
             case '+':
-                $hasil = ($angka1 * $angka3 + $angka2) . ' ' . ($angka4 * $angka6) . '/' . ($angka3 * $angka6);
-                break;
+                return ($angka1 * $angka3 + $angka2) . ' ' . ($angka4 * $angka6) . '/' . ($angka3 * $angka6);
             case '-':
-                $hasil = ($angka1 * $angka3 - $angka2) . ' ' . ($angka4 * $angka6) . '/' . ($angka3 * $angka6);
-                break;
+                return ($angka1 * $angka3 - $angka2) . ' ' . ($angka4 * $angka6) . '/' . ($angka3 * $angka6);
             case '*':
-                $hasil = (($angka1 * $angka3 + $angka2) * ($angka4 * $angka6)) . '/' . ($angka3 * $angka6);
-                break;
+                return (($angka1 * $angka3 + $angka2) * ($angka4 * $angka6)) . '/' . ($angka3 * $angka6);
             case '/':
-                $hasil = (($angka1 * $angka3 + $angka2) * ($angka3 * $angka6)) . '/' . ($angka4 * $angka6);
-                break;
+                return (($angka1 * $angka3 + $angka2) * ($angka3 * $angka6)) . '/' . ($angka4 * $angka6);
+            default:
+                return "Operasi tidak valid.";
         }
-        return $hasil;
     }
 
     public function hitungPrimeFraction($numerator, $denominator)
@@ -432,9 +407,9 @@ class Kalkulator
     public function hitungEksponen($base, $exponent)
     {
         // Menghitung nilai eksponen menggunakan fungsi pow()
-        $result = pow($base, $exponent);
-        return $result;
+        return pow($base, $exponent);
     }
+
 
     public function hitungCombineLikeTerms($terms)
     {
@@ -466,13 +441,12 @@ class Kalkulator
     //Fungsi pecahan dievaluasi
     public function hitungEvaluateFraction($pecahan)
     {
-        // Memisahkan pecahan menjadi pembilang dan penyebut
         $pecahanArr = explode('/', $pecahan);
         $pembilang = $pecahanArr[0];
         $penyebut = $pecahanArr[1];
-        $nilai = $pembilang / $penyebut;
-        return $nilai;
+        return $pembilang / $penyebut;
     }
+
 
     //Fungsi hitungInequalities
     public function hitungInequalities($inequality)
@@ -485,9 +459,10 @@ class Kalkulator
         $sisiKanan = trim($bagian[1]);
         $operator = $this->getOperator($inequality);
         $persamaan = $sisiKiri . $operator . $sisiKanan;
-        $hasil = eval("return $persamaan;");
-        return $hasil;
+        // Menghitung hasil persamaan
+        return eval("return $persamaan;");
     }
+
 
     //Fungsi getOperator
     private function getOperator($inequality)
@@ -865,26 +840,26 @@ echo "Luas Permukaan Silinder: " . $luasPermukaanSilinder . "<br>";
 //Hitung fungsi Permukaan luas silinder
 $jariJariSilinder = 3;
 $tinggiSilinder = 8;
-$luasPermukaanSilinder =$bangunRuang-> hitungLuasPermukaanSilinder($jariJariSilinder, $tinggiSilinder);
+$luasPermukaanSilinder = $bangunRuang->hitungLuasPermukaanSilinder($jariJariSilinder, $tinggiSilinder);
 echo "Luas Permukaan Silinder: " . $luasPermukaanSilinder . "<br>";
 
 //Hitung fungsi Volume kerucut
 $jariJariKerucut = 4;
 $tinggiKerucut = 6;
-$volumeKerucut =$bangunRuang-> hitungVolumeKerucut($jariJariKerucut, $tinggiKerucut);
+$volumeKerucut = $bangunRuang->hitungVolumeKerucut($jariJariKerucut, $tinggiKerucut);
 echo "Volume Kerucut: " . $volumeKerucut . "<br>";
 
 //Hitung fungsi Luas permukaan kerucut
 $jariJariKerucut = 4;
 $garisPelukisKerucut = 7;
-$luasPermukaanKerucut =$bangunRuang-> hitungLuasPermukaanKerucut($jariJariKerucut, $garisPelukisKerucut);
+$luasPermukaanKerucut = $bangunRuang->hitungLuasPermukaanKerucut($jariJariKerucut, $garisPelukisKerucut);
 echo "Luas Permukaan Kerucut: " . $luasPermukaanKerucut . "<br>";
 
 //Hitung fungsi volume bola
 $jariJariBola = 5;
-$volumeBola =$bangunRuang-> hitungVolumeBola($jariJariBola);
+$volumeBola = $bangunRuang->hitungVolumeBola($jariJariBola);
 echo "Volume Bola: " . $volumeBola . "<br>";
 
 //Hitung fungsi luas permukaan bola
-$luasPermukaanBola =$bangunRuang-> hitungLuasPermukaanBola($jariJariBola);
+$luasPermukaanBola = $bangunRuang->hitungLuasPermukaanBola($jariJariBola);
 echo "Luas Permukaan Bola: " . $luasPermukaanBola . "<br>";
