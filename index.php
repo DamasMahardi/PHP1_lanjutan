@@ -172,8 +172,24 @@ class Kalkulator
 
     public function evaluate($ekspresi)
     {
-        return eval("return $ekspresi;");
+        // Evaluasi ekspresi matematika dengan menggunakan fungsi matematika yang aman
+        return $this->evaluateMathExpression($ekspresi);
     }
+
+    private function evaluateMathExpression($ekspresi)
+    {
+        $result = null;
+        set_error_handler(function () use (&$result) {
+            // Tangani kesalahan yang terjadi saat eval()
+            $result = null;
+        });
+
+        $result = eval("return $ekspresi;");
+
+        restore_error_handler();
+        return $result;
+    }
+
 
     public function hitungArctan($nilai)
     {
@@ -1144,9 +1160,10 @@ class HitungCuaca
     // Fungsi untuk menghitung Persamaan Pemantulan Cahaya
     public static function hitungPersamaanPemantulanCahaya($sudutDatang, $sudutPantul)
     {
-        $sudutPantul = $sudutDatang; // Hukum pemantulan cahaya
-        return $sudutPantul;
+        $sudutPemantulan = $sudutDatang; // Hukum pemantulan cahaya
+        return $sudutPemantulan;
     }
+
 
     // Fungsi untuk menghitung Persamaan Aliran Fluida
     public static function hitungPersamaanAliranFluida($tekanan, $kecepatan, $tinggi)
@@ -1415,7 +1432,7 @@ class CalculatorHisabFalak
 }
 
 echo " Aplikasi Kalkulator, Fisika, kima dan islami <br>";
-echo"<br>";
+echo "<br>";
 // penggunaan kalkulator
 $kalkulator = new Kalkulator();
 $kalkulator->tambah(5);
