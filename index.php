@@ -46,8 +46,8 @@ class Kalkulator
 
     public function persentase($angka, $persentase)
     {
-        $hasilpersentase = ($angka * $persentase) / 100;
-        return $hasilpersentase;
+
+        return ($angka * $persentase) / 100;
     }
 
     public function akarKuadrat($angka)
@@ -261,8 +261,7 @@ class Statistik
         // Implementasi perhitungan rata-rata (mean)
         $total = array_sum($data);
         $jumlahData = count($data);
-        $mean = $total / $jumlahData;
-        return $mean;
+        return $total / $jumlahData;
     }
 
     public static function hitungMedian($data)
