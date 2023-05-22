@@ -85,7 +85,6 @@ class Kalkulator
         $bagianBelakang = $pecahan[1];
         return array($bagianDepan, $bagianBelakang);
     }
-    
 }
 
 class JarakAndSuhu
@@ -157,7 +156,7 @@ class Bangundatar
 
 class FungsiLogaritma
 {
-    public static function Logaritma($angka, $basis)
+    public static function logaritma($angka, $basis)
     {
         return log($angka, $basis);
     }
@@ -294,7 +293,7 @@ class Statistik
         $selisihKuadrat = array_map(function ($x) use ($mean) {
             return pow($x - $mean, 2);
         }, $data);
-        $variansi =Statistik::hitungMean($selisihKuadrat);
+        $variansi = Statistik::hitungMean($selisihKuadrat);
         return sqrt($variansi);
     }
 
@@ -341,12 +340,12 @@ class Statistik
         // Menggunakan rumus LCM = (a * b) / GCF(a, b)
         $gcf = Statistik::hitungGCF($angka1, $angka2);
         return ($angka1 * $angka2) / $gcf;
-    }  
+    }
 }
 
 class Fraksi
-    {
-        public static function hitungFraction($operasi)
+{
+    public static function hitungFraction($operasi)
     {
         // Membaca operasi pecahan dalam format "a/b + c/d"
         preg_match('#(\d+)/(\d+)\s*([+-/])\s(\d+)/(\d+)#', $operasi, $matches);
@@ -420,7 +419,7 @@ class Fraksi
         }
         return 1;
     }
-    }
+}
 
 class Aljabar
 {
@@ -1457,7 +1456,7 @@ echo "Akar kuadrat dari $angka adalah: " . $hasilAkarKuadrat . "<br>";
 
 $angka = 10;
 $basis = 2;
-$hasilFungsiLogaritma = FungsiLogaritma::Logaritma($angka, $basis);
+$hasilFungsiLogaritma = FungsiLogaritma::logaritma($angka, $basis);
 echo "FungsiLogaritma basis $basis dari $angka adalah: " . $hasilFungsiLogaritma . "<br>";
 
 $derajat = 45;
@@ -1652,7 +1651,7 @@ echo "Faktor Persekutuan Terbesar dari $angka1 dan $angka2 adalah: $gcf<br>";
 // Hitung LCM
 $angka1 = 6;
 $angka2 = 8;
-$lcm =Statistik::hitungLCM($angka1, $angka2);
+$lcm = Statistik::hitungLCM($angka1, $angka2);
 echo "Kelipatan Persekutuan Terkecil dari $angka1 dan $angka2 adalah: $lcm<br>";
 
 // Operasi pecahan
@@ -1679,7 +1678,7 @@ echo "Hasil dari $base pangkat $exponent adalah: $hasil<br>";
 
 // Contoh Hitung suku-suku yang digabungkan
 $terms = ['2x', '-3y', '4x', '5y', '-x'];
-$hasil =Aljabar::hitungCombineLikeTerms($terms);
+$hasil = Aljabar::hitungCombineLikeTerms($terms);
 echo "Hasil penggabungan suku-suku sejenis: <br>";
 foreach ($hasil as $variabel => $koefisien) {
     echo "$koefisien$variabel<br>";
