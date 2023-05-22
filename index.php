@@ -2,13 +2,7 @@
 
 class Kalkulator
 {
-    private $hasil;
-
-
-    public function __construct()
-    {
-        $this->hasil = 0;
-    }
+    private $hasil = 0;
 
     public function tambah($angka)
     {
@@ -46,7 +40,6 @@ class Kalkulator
 
     public function persentase($angka, $persentase)
     {
-
         return ($angka * $persentase) / 100;
     }
 
@@ -54,7 +47,6 @@ class Kalkulator
     {
         return sqrt($angka);
     }
-
 
     public function hitungRataRata($data)
     {
@@ -86,6 +78,7 @@ class Kalkulator
         return array($bagianDepan, $bagianBelakang);
     }
 }
+
 
 class JarakAndSuhu
 {
