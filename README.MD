@@ -1,1 +1,1 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DamasMahardi_PHP1_lanjutan&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=DamasMahardi_PHP1_lanjutan)
+Hasil Scan: [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DamasMahardi_PHP1_lanjutan&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=DamasMahardi_PHP1_lanjutan)
