@@ -177,19 +177,37 @@ class Kalkulator
     }
 
     private function evaluateMathExpression($ekspresi)
-    {
+{
+    $result = null;
+    set_error_handler(function () use (&$result) {
+        // Tangani kesalahan yang terjadi saat eval()
         $result = null;
-        set_error_handler(function () use (&$result) {
-            // Tangani kesalahan yang terjadi saat eval()
-            $result = null;
-        });
+    });
 
+    if ($this->isExpressionSafe($ekspresi)) {
         $result = eval("return $ekspresi;");
-
-        restore_error_handler();
-        return $result;
+    } else {
+        // Ekspresi tidak aman, mengembalikan null
+        $result = null;
     }
 
+    restore_error_handler();
+    return $result;
+}
+
+private function isExpressionSafe($ekspresi)
+{
+    // Periksa apakah terdapat karakter khusus yang tidak diizinkan
+    $forbiddenChars = ['`', '"', '\'', '$'];
+
+    foreach ($forbiddenChars as $char) {
+        if (strpos($ekspresi, $char) !== false) {
+            return false; // Karakter khusus yang tidak diizinkan ditemukan
+        }
+    }
+
+    return true; // Ekspresi aman
+}
 
     public function hitungArctan($nilai)
     {
