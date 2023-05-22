@@ -55,56 +55,6 @@ class Kalkulator
         return sqrt($angka);
     }
 
-    public function logaritma($angka, $basis)
-    {
-        return log($angka, $basis);
-    }
-
-    public function radian($derajat)
-    {
-        return deg2rad($derajat);
-    }
-
-    public function sinus($derajat)
-    {
-        return sin(deg2rad($derajat));
-    }
-
-    public function kosinus($derajat)
-    {
-        return cos(deg2rad($derajat));
-    }
-
-    public function tangen($derajat)
-    {
-        return tan(deg2rad($derajat));
-    }
-
-    public function hitungLuasPersegiPanjang($panjang, $lebar)
-    {
-        return $panjang * $lebar;
-    }
-
-    public function hitungLuasLingkaran($jariJari)
-    {
-        return 3.14 * $jariJari * $jariJari;
-    }
-
-    public function hitungLuasSegitiga($alas, $tinggi)
-    {
-        return 0.5 * $alas * $tinggi;
-    }
-
-    public function hitungPanjangSegitiga($a, $b, $c)
-    {
-        return $a + $b + $c;
-    }
-
-    public function konversiCelciusKeFahrenheit($celcius)
-    {
-        return ($celcius * 9 / 5) + 32;
-    }
-
     public function konversiFahrenheitKeCelcius($fahrenheit)
     {
         return ($fahrenheit - 32) * 5 / 9;
@@ -169,76 +119,141 @@ class Kalkulator
         $bagianBelakang = $pecahan[1];
         return array($bagianDepan, $bagianBelakang);
     }
+    
+}
 
-    public function hitungArctan($nilai)
+class Bangundatar
+{
+    public static function hitungLuasPersegiPanjang($panjang, $lebar)
+    {
+        return $panjang * $lebar;
+    }
+
+    public static function hitungLuasLingkaran($jariJari)
+    {
+        return 3.14 * $jariJari * $jariJari;
+    }
+
+    public static function hitungLuasSegitiga($alas, $tinggi)
+    {
+        return 0.5 * $alas * $tinggi;
+    }
+
+    public static function hitungPanjangSegitiga($a, $b, $c)
+    {
+        return $a + $b + $c;
+    }
+
+    public static function konversiCelciusKeFahrenheit($celcius)
+    {
+        return ($celcius * 9 / 5) + 32;
+    }
+}
+
+
+class Logaritma
+{
+    public static function logaritma($angka, $basis)
+    {
+        return log($angka, $basis);
+    }
+
+    public static function radian($derajat)
+    {
+        return deg2rad($derajat);
+    }
+
+    public static function sinus($derajat)
+    {
+        return sin(deg2rad($derajat));
+    }
+
+    public static function kosinus($derajat)
+    {
+        return cos(deg2rad($derajat));
+    }
+
+    public static function tangen($derajat)
+    {
+        return tan(deg2rad($derajat));
+    }
+}
+
+class TriGonoMetri
+{
+    public static function hitungArctan($nilai)
     {
         // Implementasi perhitungan arctan
         return atan($nilai);
     }
 
-    public function hitungCot($nilai)
+    public static function hitungCot($nilai)
     {
         // Implementasi perhitungan cot
         return 1 / tan($nilai);
     }
 
-    public function hitungSec($nilai)
+    public static function hitungSec($nilai)
     {
         // Implementasi perhitungan sec
         return 1 / cos($nilai);
     }
 
-    public function hitungCsc($nilai)
+    public static function hitungCsc($nilai)
     {
         // Implementasi perhitungan csc
         return 1 / sin($nilai);
     }
 
-    public function hitungArccos($nilai)
+    public static function hitungArccos($nilai)
     {
         // Implementasi perhitungan arccos
         return acos($nilai);
     }
 
-    public function hitungArcsin($nilai)
+    public static function hitungArcsin($nilai)
     {
         // Implementasi perhitungan arcsin
         return asin($nilai);
     }
+}
 
-    public function hitungAnd($a, $b)
+class boolean
+{
+    public static function hitungAnd($a, $b)
     {
         // Implementasi perhitungan operasi AND
         return $a && $b;
     }
 
-    public function hitungOr($a, $b)
+    public static function hitungOr($a, $b)
     {
         // Implementasi perhitungan operasi OR
         return $a || $b;
     }
 
-    public function hitungNot($a)
+    public static function hitungNot($a)
     {
         // Implementasi perhitungan operasi NOT
         return !$a;
     }
 
-    public function hitungXor($a, $b)
+    public static function hitungXor($a, $b)
     {
         // Implementasi perhitungan operasi XOR
         return ($a && !$b) || (!$a && $b);
     }
 
-    public function hitungModulo($a, $b)
+    public static function hitungModulo($a, $b)
     {
         // Implementasi perhitungan modulo
         return $a % $b;
     }
+}
 
-
-
-    public function hitungMean($data)
+class Statistik
+{
+    public static function hitungMean($data)
     {
         // Implementasi perhitungan rata-rata (mean)
         $total = array_sum($data);
@@ -247,7 +262,7 @@ class Kalkulator
         return $mean;
     }
 
-    public function hitungMedian($data)
+    public static function hitungMedian($data)
     {
         // Implementasi perhitungan median
         sort($data);
@@ -261,32 +276,32 @@ class Kalkulator
         return $median;
     }
 
-    public function hitungMode($data)
+    public static function hitungMode($data)
     {
         // Implementasi perhitungan modus
         $frekuensi = array_count_values($data);
         return array_keys($frekuensi, max($frekuensi));
     }
 
-    public function hitungStandarDeviasi($data)
+    public static function hitungStandarDeviasi($data)
     {
         // Implementasi perhitungan standar deviasi
-        $mean = $this->hitungMean($data);
+        $mean = Statistik::hitungMean($data);
         $selisihKuadrat = array_map(function ($x) use ($mean) {
             return pow($x - $mean, 2);
         }, $data);
-        $variansi = $this->hitungMean($selisihKuadrat);
+        $variansi =Statistik::hitungMean($selisihKuadrat);
         return sqrt($variansi);
     }
 
-    public function hitungVarian($data)
+    public static function hitungVarian($data)
     {
         // Implementasi perhitungan variansi
-        $standarDeviasi = $this->hitungStandarDeviasi($data);
+        $standarDeviasi = Statistik::hitungStandarDeviasi($data);
         return pow($standarDeviasi, 2);
     }
 
-    public function hitungModus($data)
+    public static function hitungModus($data)
     {
         // Menghitung frekuensi kemunculan setiap elemen dalam data
         $frekuensi = array_count_values($data);
@@ -304,7 +319,7 @@ class Kalkulator
         return $modus;
     }
 
-    public function hitungGCF($angka1, $angka2)
+    public static function hitungGCF($angka1, $angka2)
     {
         // Menggunakan algoritma Euclidean untuk menghitung GCF
         while ($angka2 != 0) {
@@ -317,14 +332,17 @@ class Kalkulator
         return $angka1;
     }
 
-    public function hitungLCM($angka1, $angka2)
+    public static function hitungLCM($angka1, $angka2)
     {
         // Menggunakan rumus LCM = (a * b) / GCF(a, b)
-        $gcf = $this->hitungGCF($angka1, $angka2);
+        $gcf = Statistik::hitungGCF($angka1, $angka2);
         return ($angka1 * $angka2) / $gcf;
-    }
+    }  
+}
 
-    public function hitungFraction($operasi)
+class Fraksi
+    {
+        public static function hitungFraction($operasi)
     {
         // Membaca operasi pecahan dalam format "a/b + c/d"
         preg_match('#(\d+)/(\d+)\s*([+-/])\s(\d+)/(\d+)#', $operasi, $matches);
@@ -350,7 +368,7 @@ class Kalkulator
     }
 
 
-    public function hitungMixedFraction($operasi)
+    public static function hitungMixedFraction($operasi)
     {
         // Membaca operasi pecahan campuran dalam format "a b/c + d e/f"
         // Menyimpan angka-angka dan operator dalam variabel terpisah
@@ -378,16 +396,16 @@ class Kalkulator
         }
     }
 
-    public function hitungPrimeFraction($numerator, $denominator)
+    public static function hitungPrimeFraction($numerator, $denominator)
     {
         // Mencari faktor terkecil dari pembilang dan penyebut
-        $faktorTerkecil = $this->cariFaktorTerkecil($numerator, $denominator);
+        $faktorTerkecil = Fraksi::cariFaktorTerkecil($numerator, $denominator);
         $numeratorPrima = $numerator / $faktorTerkecil;
         $denominatorPrima = $denominator / $faktorTerkecil;
         return $numeratorPrima . '/' . $denominatorPrima;
     }
 
-    private function cariFaktorTerkecil($numerator, $denominator)
+    private static function cariFaktorTerkecil($numerator, $denominator)
     {
         // Menentukan bilangan terkecil antara pembilang dan penyebut
         $minValue = min($numerator, $denominator);
@@ -398,15 +416,18 @@ class Kalkulator
         }
         return 1;
     }
+    }
 
-    public function hitungEksponen($base, $exponent)
+class Aljabar
+{
+    public static function hitungEksponen($base, $exponent)
     {
         // Menghitung nilai eksponen menggunakan fungsi pow()
         return pow($base, $exponent);
     }
 
 
-    public function hitungCombineLikeTerms($terms)
+    public static function hitungCombineLikeTerms($terms)
     {
         // Menginisialisasi array kosong untuk menyimpan hasil
         $hasil = [];
@@ -434,7 +455,7 @@ class Kalkulator
     }
 
     //Fungsi pecahan dievaluasi
-    public function hitungEvaluateFraction($pecahan)
+    public static function hitungEvaluateFraction($pecahan)
     {
         $pecahanArr = explode('/', $pecahan);
         $pembilang = $pecahanArr[0];
@@ -444,7 +465,7 @@ class Kalkulator
 
 
     //Fungsi hitungInequalities
-    public function hitungInequalities($inequality)
+    public static function hitungInequalities($inequality)
     {
         $bagian = explode("=", $inequality);
         if (count($bagian) != 2) {
@@ -452,7 +473,7 @@ class Kalkulator
         }
         $sisiKiri = trim($bagian[0]);
         $sisiKanan = trim($bagian[1]);
-        $operator = $this->getOperator($inequality);
+        $operator = Aljabar::getOperator($inequality);
         $persamaan = $sisiKiri . $operator . $sisiKanan;
         // Menghitung hasil persamaan
         return eval("return $persamaan;");
@@ -460,7 +481,7 @@ class Kalkulator
 
 
     //Fungsi getOperator
-    private function getOperator($inequality)
+    private static function getOperator($inequality)
     {
         if (strpos($inequality, "<=") !== false) {
             return "<=";
@@ -1432,47 +1453,47 @@ echo "Akar kuadrat dari $angka adalah: " . $hasilAkarKuadrat . "<br>";
 
 $angka = 10;
 $basis = 2;
-$hasilLogaritma = $kalkulator->logaritma($angka, $basis);
+$hasilLogaritma = Logaritma::logaritma($angka, $basis);
 echo "Logaritma basis $basis dari $angka adalah: " . $hasilLogaritma . "<br>";
 
 $derajat = 45;
-$hasilRadian = $kalkulator->radian($derajat);
+$hasilRadian = Logaritma::radian($derajat);
 echo "Nilai $derajat derajat dalam radian adalah: " . $hasilRadian . "<br>";
 
 $derajat = 30;
-$hasilSinus = $kalkulator->sinus($derajat);
+$hasilSinus = Logaritma::sinus($derajat);
 echo "Sinus dari $derajat derajat adalah: " . $hasilSinus . "<br>";
 
 $derajat = 60;
-$hasilKosinus = $kalkulator->kosinus($derajat);
+$hasilKosinus = Logaritma::kosinus($derajat);
 echo "Kosinus dari $derajat derajat adalah: " . $hasilKosinus . "<br>";
 
 $derajat = 45;
-$hasilTangen = $kalkulator->tangen($derajat);
+$hasilTangen = Logaritma::tangen($derajat);
 echo "Tangen dari $derajat derajat adalah: " . $hasilTangen . "<br>";
 
 $panjang = 5;
 $lebar = 3;
-$luasPersegiPanjang = $kalkulator->hitungLuasPersegiPanjang($panjang, $lebar);
+$luasPersegiPanjang = Bangundatar::hitungLuasPersegiPanjang($panjang, $lebar);
 echo "Luas persegi panjang dengan panjang $panjang dan lebar $lebar adalah: " . $luasPersegiPanjang . "<br>";
 
 $jariJari = 4;
-$luasLingkaran = $kalkulator->hitungLuasLingkaran($jariJari);
+$luasLingkaran = Bangundatar::hitungLuasLingkaran($jariJari);
 echo "Luas lingkaran dengan jari-jari $jariJari adalah: " . $luasLingkaran . "<br>";
 
 $alas = 6;
 $tinggi = 8;
-$luasSegitiga = $kalkulator->hitungLuasSegitiga($alas, $tinggi);
+$luasSegitiga = Bangundatar::hitungLuasSegitiga($alas, $tinggi);
 echo "Luas segitiga dengan alas $alas dan tinggi $tinggi adalah: " . $luasSegitiga . "<br>";
 
 $a = 3;
 $b = 4;
 $c = 5;
-$panjangSegitiga = $kalkulator->hitungPanjangSegitiga($a, $b, $c);
+$panjangSegitiga = Bangundatar::hitungPanjangSegitiga($a, $b, $c);
 echo "Panjang segitiga dengan sisi $a, $b, dan $c adalah: " . $panjangSegitiga . "<br>";
 
 $celcius = 30;
-$hasilKonversi = $kalkulator->konversiCelciusKeFahrenheit($celcius);
+$hasilKonversi = Bangundatar::konversiCelciusKeFahrenheit($celcius);
 echo "Konversi suhu $celcius derajat Celcius ke Fahrenheit adalah: " . $hasilKonversi . "<br>";
 
 $fahrenheit = 86;
@@ -1531,130 +1552,130 @@ echo "Pecahan dari angka $angka adalah: " . $pecahan[0] . " dan " . $pecahan[1] 
 
 // Hitung arctan
 $nilaiArctan = 0.5;
-$hasilArctan = $kalkulator->hitungArctan($nilaiArctan);
+$hasilArctan = TriGonoMetri::hitungArctan($nilaiArctan);
 echo "Hasil perhitungan arctan dari " . $nilaiArctan . " adalah: " . $hasilArctan . "<br>";
 
 // Hitung cot
 $nilaiCot = 1;
-$hasilCot = $kalkulator->hitungCot($nilaiCot);
+$hasilCot = TriGonoMetri::hitungCot($nilaiCot);
 echo "Hasil perhitungan cot dari " . $nilaiCot . " adalah: " . $hasilCot . "<br>";
 
 // Hitung sec
 $nilaiSec = 0.8;
-$hasilSec = $kalkulator->hitungSec($nilaiSec);
+$hasilSec = TriGonoMetri::hitungSec($nilaiSec);
 echo "Hasil perhitungan sec dari " . $nilaiSec . " adalah: " . $hasilSec . "<br>";
 
 // Hitung csc
 $nilaiCsc = 1.2;
-$hasilCsc = $kalkulator->hitungCsc($nilaiCsc);
+$hasilCsc = TriGonoMetri::hitungCsc($nilaiCsc);
 echo "Hasil perhitungan csc dari " . $nilaiCsc . " adalah: " . $hasilCsc . "<br>";
 
 // Hitung arccos
 $nilaiArccos = 0.3;
-$hasilArccos = $kalkulator->hitungArccos($nilaiArccos);
+$hasilArccos = TriGonoMetri::hitungArccos($nilaiArccos);
 echo "Hasil perhitungan arccos dari " . $nilaiArccos . " adalah: " . $hasilArccos . "<br>";
 
 // Hitung arcsin
 $nilaiArcsin = 0.6;
-$hasilArcsin = $kalkulator->hitungArcsin($nilaiArcsin);
+$hasilArcsin = TriGonoMetri::hitungArcsin($nilaiArcsin);
 echo "Hasil perhitungan arcsin dari " . $nilaiArcsin . " adalah: " . $hasilArcsin . "<br>";
 
 // Hitung operasi AND
 $a = true;
 $b = false;
-$hasilAnd = $kalkulator->hitungAnd($a, $b);
+$hasilAnd = boolean::hitungAnd($a, $b);
 echo "Hasil perhitungan operasi AND dari " . ($a ? 'true' : 'false') . " dan " . ($b ? 'true' : 'false') . " adalah: " . ($hasilAnd ? 'true' : 'false') . "<br>";
 
 // Hitung operasi OR
 $a = true;
 $b = false;
-$hasilOr = $kalkulator->hitungOr($a, $b);
+$hasilOr = boolean::hitungOr($a, $b);
 echo "Hasil perhitungan operasi OR dari " . $a . " dan " . $b . " adalah: " . $hasilOr . "<br>";
 
 // Hitung operasi NOT
 $a = true;
-$hasilNot = $kalkulator->hitungNot($a);
+$hasilNot = boolean::hitungNot($a);
 echo "Hasil perhitungan operasi NOT dari " . ($a ? 'true' : 'false') . " adalah: " . ($hasilNot ? 'true' : 'false') . "<br>";
 
 // Hitung operasi XOR
 $a = true;
 $b = false;
-$hasilXor = $kalkulator->hitungXor($a, $b);
+$hasilXor = boolean::hitungXor($a, $b);
 echo "Hasil perhitungan operasi XOR dari " . $a . " dan " . $b . " adalah: " . $hasilXor . "<br>";
 
 // Hitung modulo
 $a = 13;
 $b = 5;
-$hasilModulo = $kalkulator->hitungModulo($a, $b);
+$hasilModulo = boolean::hitungModulo($a, $b);
 echo "Hasil perhitungan modulo dari " . $a . " dan " . $b . " adalah: " . $hasilModulo . "<br>";
 
 // Hitung rata-rata (mean)
 $data = [10, 20, 30, 40, 50];
-$mean = $kalkulator->hitungMean($data);
+$mean = Statistik::hitungMean($data);
 echo "Rata-rata (mean) dari data " . implode(", ", $data) . " adalah: " . $mean . "<br>";
 
 // Hitung median
 $data = [5, 10, 15, 20, 25];
-$median = $kalkulator->hitungMedian($data);
+$median = Statistik::hitungMedian($data);
 echo "Median dari data " . implode(", ", $data) . " adalah: " . $median . "<br>";
 
 // Hitung modus
 $data = [5, 10, 15, 10, 20, 25, 10];
-$modus = $kalkulator->hitungMode($data);
+$modus = Statistik::hitungMode($data);
 echo "Modus dari data " . implode(", ", $data) . " adalah: " . implode(", ", $modus) . "<br>";
 
 // Hitung standar deviasi
 $data = [10, 20, 30, 40, 50];
-$standarDeviasi = $kalkulator->hitungStandarDeviasi($data);
+$standarDeviasi = Statistik::hitungStandarDeviasi($data);
 echo "Standar deviasi dari data " . implode(", ", $data) . " adalah: " . $standarDeviasi . "<br>";
 
 // Hitung variansi
 $data = [10, 20, 30, 40, 50];
-$varian = $kalkulator->hitungVarian($data);
+$varian = Statistik::hitungVarian($data);
 echo "Variansi dari data " . implode(", ", $data) . " adalah: " . $varian . "<br>";
 
 // Hitung modus
 $data = [10, 20, 30, 20, 40, 30, 50, 30];
-$modus = $kalkulator->hitungModus($data);
+$modus = Statistik::hitungModus($data);
 echo "Modus dari data " . implode(", ", $data) . " adalah: " . implode(", ", $modus) . "<br>";
 
 // Hitung GCF
 $angka1 = 24;
 $angka2 = 36;
-$gcf = $kalkulator->hitungGCF($angka1, $angka2);
+$gcf = Statistik::hitungGCF($angka1, $angka2);
 echo "Faktor Persekutuan Terbesar dari $angka1 dan $angka2 adalah: $gcf<br>";
 
 // Hitung LCM
 $angka1 = 6;
 $angka2 = 8;
-$lcm = $kalkulator->hitungLCM($angka1, $angka2);
+$lcm =Statistik::hitungLCM($angka1, $angka2);
 echo "Kelipatan Persekutuan Terkecil dari $angka1 dan $angka2 adalah: $lcm<br>";
 
 // Operasi pecahan
 $operasi = "1/2 + 3/4";
-$hasil = $kalkulator->hitungFraction($operasi);
+$hasil = Fraksi::hitungFraction($operasi);
 echo "Hasil dari operasi pecahan $operasi adalah: $hasil<br>";
 
 // Operasi pecahan campuran
 $operasi = "1 1/2 + 3 3/4";
-$hasil = $kalkulator->hitungMixedFraction($operasi);
+$hasil = Fraksi::hitungMixedFraction($operasi);
 echo "Hasil dari operasi pecahan campuran $operasi adalah: $hasil<br>";
 
 // Pecahan prima
 $numerator = 6;
 $denominator = 8;
-$hasil = $kalkulator->hitungPrimeFraction($numerator, $denominator);
+$hasil = Fraksi::hitungPrimeFraction($numerator, $denominator);
 echo "Pecahan prima dari $numerator/$denominator adalah: $hasil<br>";
 
 // Basis dan eksponen
 $base = 2;
 $exponent = 3;
-$hasil = $kalkulator->hitungEksponen($base, $exponent);
+$hasil = Aljabar::hitungEksponen($base, $exponent);
 echo "Hasil dari $base pangkat $exponent adalah: $hasil<br>";
 
 // Contoh Hitung suku-suku yang digabungkan
 $terms = ['2x', '-3y', '4x', '5y', '-x'];
-$hasil = $kalkulator->hitungCombineLikeTerms($terms);
+$hasil =Aljabar::hitungCombineLikeTerms($terms);
 echo "Hasil penggabungan suku-suku sejenis: <br>";
 foreach ($hasil as $variabel => $koefisien) {
     echo "$koefisien$variabel<br>";
@@ -1662,12 +1683,12 @@ foreach ($hasil as $variabel => $koefisien) {
 
 // Pecahan yang akan dievaluasi
 $pecahan = "3/4";
-$hasil = $kalkulator->hitungEvaluateFraction($pecahan);
+$hasil = Aljabar::hitungEvaluateFraction($pecahan);
 echo "Hasil evaluasi pecahan: $hasil<br>";
 
 // Hitung Ketaksamaan
 $ketaksamaan = "2x + 5 > 10";
-$hasil = $kalkulator->hitungInequalities($ketaksamaan);
+$hasil = Aljabar::hitungInequalities($ketaksamaan);
 echo "Hasil ketaksamaan: $hasil<br>";
 
 //  penggunaan class BangunRuang
