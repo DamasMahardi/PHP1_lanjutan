@@ -55,40 +55,6 @@ class Kalkulator
         return sqrt($angka);
     }
 
-    public function konversiFahrenheitKeCelcius($fahrenheit)
-    {
-        return ($fahrenheit - 32) * 5 / 9;
-    }
-
-    public function hitungVolumeKubus($sisi)
-    {
-        return $sisi * $sisi * $sisi;
-    }
-
-    public function hitungVolumeTabung($jariJari, $tinggi)
-    {
-        return 3.14 * $jariJari * $jariJari * $tinggi;
-    }
-
-    public function hitungMassaJenis($massa, $volume)
-    {
-        return $massa / $volume;
-    }
-
-    public function hitungKecepatan($jarak, $waktu)
-    {
-        return $jarak / $waktu;
-    }
-
-    public function hitungWaktuTempuh($jarak, $kecepatan)
-    {
-        return $jarak / $kecepatan;
-    }
-
-    public function hitungTip($jumlahTagihan, $persentaseTip)
-    {
-        return ($jumlahTagihan * $persentaseTip) / 100;
-    }
 
     public function hitungRataRata($data)
     {
@@ -122,6 +88,29 @@ class Kalkulator
     
 }
 
+class JarakAndSuhu
+{
+    public static function konversiFahrenheitKeCelcius($fahrenheit)
+    {
+        return ($fahrenheit - 32) * 5 / 9;
+    }
+
+    public static function hitungKecepatan($jarak, $waktu)
+    {
+        return $jarak / $waktu;
+    }
+
+    public static function hitungWaktuTempuh($jarak, $kecepatan)
+    {
+        return $jarak / $kecepatan;
+    }
+
+    public static function hitungTip($jumlahTagihan, $persentaseTip)
+    {
+        return ($jumlahTagihan * $persentaseTip) / 100;
+    }
+}
+
 class Bangundatar
 {
     public static function hitungLuasPersegiPanjang($panjang, $lebar)
@@ -148,12 +137,27 @@ class Bangundatar
     {
         return ($celcius * 9 / 5) + 32;
     }
+
+    public static function hitungVolumeKubus($sisi)
+    {
+        return $sisi * $sisi * $sisi;
+    }
+
+    public static function hitungVolumeTabung($jariJari, $tinggi)
+    {
+        return 3.14 * $jariJari * $jariJari * $tinggi;
+    }
+
+    public static function hitungMassaJenis($massa, $volume)
+    {
+        return $massa / $volume;
+    }
 }
 
 
-class Logaritma
+class FungsiLogaritma
 {
-    public static function logaritma($angka, $basis)
+    public static function Logaritma($angka, $basis)
     {
         return log($angka, $basis);
     }
@@ -218,7 +222,7 @@ class TriGonoMetri
     }
 }
 
-class boolean
+class FungsiBoolean
 {
     public static function hitungAnd($a, $b)
     {
@@ -1453,23 +1457,23 @@ echo "Akar kuadrat dari $angka adalah: " . $hasilAkarKuadrat . "<br>";
 
 $angka = 10;
 $basis = 2;
-$hasilLogaritma = Logaritma::logaritma($angka, $basis);
-echo "Logaritma basis $basis dari $angka adalah: " . $hasilLogaritma . "<br>";
+$hasilFungsiLogaritma = FungsiLogaritma::Logaritma($angka, $basis);
+echo "FungsiLogaritma basis $basis dari $angka adalah: " . $hasilFungsiLogaritma . "<br>";
 
 $derajat = 45;
-$hasilRadian = Logaritma::radian($derajat);
+$hasilRadian = FungsiLogaritma::radian($derajat);
 echo "Nilai $derajat derajat dalam radian adalah: " . $hasilRadian . "<br>";
 
 $derajat = 30;
-$hasilSinus = Logaritma::sinus($derajat);
+$hasilSinus = FungsiLogaritma::sinus($derajat);
 echo "Sinus dari $derajat derajat adalah: " . $hasilSinus . "<br>";
 
 $derajat = 60;
-$hasilKosinus = Logaritma::kosinus($derajat);
+$hasilKosinus = FungsiLogaritma::kosinus($derajat);
 echo "Kosinus dari $derajat derajat adalah: " . $hasilKosinus . "<br>";
 
 $derajat = 45;
-$hasilTangen = Logaritma::tangen($derajat);
+$hasilTangen = FungsiLogaritma::tangen($derajat);
 echo "Tangen dari $derajat derajat adalah: " . $hasilTangen . "<br>";
 
 $panjang = 5;
@@ -1497,36 +1501,36 @@ $hasilKonversi = Bangundatar::konversiCelciusKeFahrenheit($celcius);
 echo "Konversi suhu $celcius derajat Celcius ke Fahrenheit adalah: " . $hasilKonversi . "<br>";
 
 $fahrenheit = 86;
-$hasilKonversi = $kalkulator->konversiFahrenheitKeCelcius($fahrenheit);
+$hasilKonversi = JarakAndSuhu::konversiFahrenheitKeCelcius($fahrenheit);
 echo "Konversi suhu $fahrenheit derajat Fahrenheit ke Celcius adalah: " . $hasilKonversi . "<br>";
 
 $sisi = 5;
-$volumeKubus = $kalkulator->hitungVolumeKubus($sisi);
+$volumeKubus = Bangundatar::hitungVolumeKubus($sisi);
 echo "Volume kubus dengan sisi $sisi adalah: " . $volumeKubus . "<br>";
 
 $jariJari = 3;
 $tinggi = 8;
-$volumeTabung = $kalkulator->hitungVolumeTabung($jariJari, $tinggi);
+$volumeTabung = Bangundatar::hitungVolumeTabung($jariJari, $tinggi);
 echo "Volume tabung dengan jari-jari $jariJari dan tinggi $tinggi adalah: " . $volumeTabung . "<br>";
 
 $massa = 120;
 $volume = 30;
-$massaJenis = $kalkulator->hitungMassaJenis($massa, $volume);
+$massaJenis = Bangundatar::hitungMassaJenis($massa, $volume);
 echo "Massa jenis dengan massa $massa kg dan volume $volume m^3 adalah: " . $massaJenis . "<br>";
 
 $jarak = 120;
 $waktu = 2;
-$kecepatan = $kalkulator->hitungKecepatan($jarak, $waktu);
+$kecepatan = JarakAndSuhu::hitungKecepatan($jarak, $waktu);
 echo "Kecepatan dengan jarak $jarak km dan waktu $waktu jam adalah: " . $kecepatan . "<br>";
 
 $jarak = 240;
 $kecepatan = 60;
-$waktuTempuh = $kalkulator->hitungWaktuTempuh($jarak, $kecepatan);
+$waktuTempuh = JarakAndSuhu::hitungWaktuTempuh($jarak, $kecepatan);
 echo "Waktu tempuh dengan jarak $jarak km dan kecepatan $kecepatan km/jam adalah: " . $waktuTempuh . "<br>";
 
 $jumlahTagihan = 100;
 $persentaseTip = 10;
-$tip = $kalkulator->hitungTip($jumlahTagihan, $persentaseTip);
+$tip = JarakAndSuhu::hitungTip($jumlahTagihan, $persentaseTip);
 echo "Tip untuk tagihan sebesar $jumlahTagihan dengan persentase tip $persentaseTip% adalah: " . $tip . "<br>";
 
 $data = array(2, 4, 6, 8, 10);
@@ -1583,30 +1587,30 @@ echo "Hasil perhitungan arcsin dari " . $nilaiArcsin . " adalah: " . $hasilArcsi
 // Hitung operasi AND
 $a = true;
 $b = false;
-$hasilAnd = boolean::hitungAnd($a, $b);
+$hasilAnd = FungsiBoolean::hitungAnd($a, $b);
 echo "Hasil perhitungan operasi AND dari " . ($a ? 'true' : 'false') . " dan " . ($b ? 'true' : 'false') . " adalah: " . ($hasilAnd ? 'true' : 'false') . "<br>";
 
 // Hitung operasi OR
 $a = true;
 $b = false;
-$hasilOr = boolean::hitungOr($a, $b);
+$hasilOr = FungsiBoolean::hitungOr($a, $b);
 echo "Hasil perhitungan operasi OR dari " . $a . " dan " . $b . " adalah: " . $hasilOr . "<br>";
 
 // Hitung operasi NOT
 $a = true;
-$hasilNot = boolean::hitungNot($a);
+$hasilNot = FungsiBoolean::hitungNot($a);
 echo "Hasil perhitungan operasi NOT dari " . ($a ? 'true' : 'false') . " adalah: " . ($hasilNot ? 'true' : 'false') . "<br>";
 
 // Hitung operasi XOR
 $a = true;
 $b = false;
-$hasilXor = boolean::hitungXor($a, $b);
+$hasilXor = FungsiBoolean::hitungXor($a, $b);
 echo "Hasil perhitungan operasi XOR dari " . $a . " dan " . $b . " adalah: " . $hasilXor . "<br>";
 
 // Hitung modulo
 $a = 13;
 $b = 5;
-$hasilModulo = boolean::hitungModulo($a, $b);
+$hasilModulo = FungsiBoolean::hitungModulo($a, $b);
 echo "Hasil perhitungan modulo dari " . $a . " dan " . $b . " adalah: " . $hasilModulo . "<br>";
 
 // Hitung rata-rata (mean)
