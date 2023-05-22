@@ -425,35 +425,6 @@ class Aljabar
         return $pembilang / $penyebut;
     }
 
-
-    //Fungsi hitungInequalities
-    public static function hitungInequalities($inequality)
-    {
-        $bagian = explode("=", $inequality);
-        if (count($bagian) != 2) {
-            return "Persamaan tidak valid";
-        }
-        $sisiKiri = trim($bagian[0]);
-        $sisiKanan = trim($bagian[1]);
-        $operator = Aljabar::getOperator($inequality);
-        $persamaan = $sisiKiri . $operator . $sisiKanan;
-        // Menghitung hasil persamaan dengan fungsi eval()
-        $hasil = null;
-        try {
-            eval("\$hasil = $persamaan;");
-        } catch (Throwable $e) {
-            $hasil = null;
-        }
-
-        if ($hasil !== null) {
-            return $hasil;
-        } else {
-            return "Terjadi kesalahan dalam menghitung persamaan";
-        }
-    }
-
-
-
     //Fungsi getOperator
     private static function getOperator($inequality)
     {
@@ -1638,11 +1609,6 @@ foreach ($hasil as $variabel => $koefisien) {
 $pecahan = "3/4";
 $hasil = Aljabar::hitungEvaluateFraction($pecahan);
 echo "Hasil evaluasi pecahan: $hasil<br>";
-
-// Hitung Ketaksamaan
-$ketaksamaan = "2x + 5 > 10";
-$hasil = Aljabar::hitungInequalities($ketaksamaan);
-echo "Hasil ketaksamaan: $hasil<br>";
 
 //  penggunaan class BangunRuang
 $bangunRuang = new BangunRuang();
