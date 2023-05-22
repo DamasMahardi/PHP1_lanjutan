@@ -356,43 +356,10 @@ class Fraksi
 
         // Menghitung hasil operasi pecahan
         switch ($operator) {
-            case '+':
-                return ($angka1 * $angka4 + $angka2 * $angka3) . '/' . ($angka2 * $angka4);
-            case '-':
-                return ($angka1 * $angka4 - $angka2 * $angka3) . '/' . ($angka2 * $angka4);
             case '*':
                 return ($angka1 * $angka3) . '/' . ($angka2 * $angka4);
             case '/':
                 return ($angka1 * $angka4) . '/' . ($angka2 * $angka3);
-            default:
-                return "Operasi tidak valid.";
-        }
-    }
-
-
-    public static function hitungMixedFraction($operasi)
-    {
-        // Membaca operasi pecahan campuran dalam format "a b/c + d e/f"
-        // Menyimpan angka-angka dan operator dalam variabel terpisah
-        preg_match('/(\d+)\s+(\d+)\/(\d+)\s*([+\-*\/])\s*(\d+)\s+(\d+)\/(\d+)/', $operasi, $matches);
-        $angka1 = $matches[1];
-        $angka2 = $matches[2];
-        $angka3 = $matches[3];
-        $operator = $matches[4];
-        $angka4 = $matches[5];
-        $angka5 = $matches[6];
-        $angka6 = $matches[7];
-
-        // Menghitung hasil operasi pecahan campuran
-        switch ($operator) {
-            case '+':
-                return ($angka1 * $angka3 + $angka2) . ' ' . ($angka4 * $angka6) . '/' . ($angka3 * $angka6);
-            case '-':
-                return ($angka1 * $angka3 - $angka2) . ' ' . ($angka4 * $angka6) . '/' . ($angka3 * $angka6);
-            case '*':
-                return (($angka1 * $angka3 + $angka2) * ($angka4 * $angka6)) . '/' . ($angka3 * $angka6);
-            case '/':
-                return (($angka1 * $angka3 + $angka2) * ($angka3 * $angka6)) . '/' . ($angka4 * $angka6);
             default:
                 return "Operasi tidak valid.";
         }
@@ -491,10 +458,6 @@ class Aljabar
             return ">=";
         } elseif (strpos($inequality, "<") !== false) {
             return "<";
-        } elseif (strpos($inequality, ">") !== false) {
-            return ">";
-        } elseif (strpos($inequality, "=") !== false) {
-            return "==";
         } else {
             return "";
         }
@@ -1657,11 +1620,6 @@ echo "Kelipatan Persekutuan Terkecil dari $angka1 dan $angka2 adalah: $lcm<br>";
 $operasi = "1/2 + 3/4";
 $hasil = Fraksi::hitungFraction($operasi);
 echo "Hasil dari operasi pecahan $operasi adalah: $hasil<br>";
-
-// Operasi pecahan campuran
-$operasi = "1 1/2 + 3 3/4";
-$hasil = Fraksi::hitungMixedFraction($operasi);
-echo "Hasil dari operasi pecahan campuran $operasi adalah: $hasil<br>";
 
 // Pecahan prima
 $numerator = 6;
