@@ -437,9 +437,21 @@ class Aljabar
         $sisiKanan = trim($bagian[1]);
         $operator = Aljabar::getOperator($inequality);
         $persamaan = $sisiKiri . $operator . $sisiKanan;
-        // Menghitung hasil persamaan
-        return eval("return $persamaan;");
+        // Menghitung hasil persamaan dengan fungsi eval()
+        $hasil = null;
+        try {
+            eval("\$hasil = $persamaan;");
+        } catch (Throwable $e) {
+            $hasil = null;
+        }
+
+        if ($hasil !== null) {
+            return $hasil;
+        } else {
+            return "Terjadi kesalahan dalam menghitung persamaan";
+        }
     }
+
 
 
     //Fungsi getOperator
