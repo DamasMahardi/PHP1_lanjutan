@@ -170,45 +170,6 @@ class Kalkulator
         return array($bagianDepan, $bagianBelakang);
     }
 
-    public function evaluate($ekspresi)
-    {
-        // Evaluasi ekspresi matematika dengan menggunakan fungsi matematika yang aman
-        return $this->evaluateMathExpression($ekspresi);
-    }
-
-    private function evaluateMathExpression($ekspresi)
-{
-    $result = null;
-    set_error_handler(function () use (&$result) {
-        // Tangani kesalahan yang terjadi saat eval()
-        $result = null;
-    });
-
-    if ($this->isExpressionSafe($ekspresi)) {
-        $result = eval("return $ekspresi;");
-    } else {
-        // Ekspresi tidak aman, mengembalikan null
-        $result = null;
-    }
-
-    restore_error_handler();
-    return $result;
-}
-
-private function isExpressionSafe($ekspresi)
-{
-    // Periksa apakah terdapat karakter khusus yang tidak diizinkan
-    $forbiddenChars = ['`', '"', '\'', '$'];
-
-    foreach ($forbiddenChars as $char) {
-        if (strpos($ekspresi, $char) !== false) {
-            return false; // Karakter khusus yang tidak diizinkan ditemukan
-        }
-    }
-
-    return true; // Ekspresi aman
-}
-
     public function hitungArctan($nilai)
     {
         // Implementasi perhitungan arctan
@@ -1567,10 +1528,6 @@ echo "Hasil dari $angka pangkat $pangkat adalah: " . $hasilPangkat . "<br>";
 $angka = 10.5;
 $pecahan = $kalkulator->hitungPecahan($angka);
 echo "Pecahan dari angka $angka adalah: " . $pecahan[0] . " dan " . $pecahan[1] . "<br>";
-
-$ekspresi = "2 + 3 * 4 - 1";
-$hasilEvaluate = $kalkulator->evaluate($ekspresi);
-echo "Hasil evaluasi ekspresi $ekspresi adalah: " . $hasilEvaluate . "<br>";
 
 // Hitung arctan
 $nilaiArctan = 0.5;
