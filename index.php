@@ -456,8 +456,6 @@ class Aljabar
             return "<=";
         } elseif (strpos($inequality, ">=") !== false) {
             return ">=";
-        } elseif (strpos($inequality, "<") !== false) {
-            return "<";
         } else {
             return "";
         }
@@ -468,8 +466,7 @@ class BangunRuang
 {
     public function hitungVolumeKubus($sisi)
     {
-        $volume = pow($sisi, 3);
-        return $volume;
+        return pow($sisi, 3);
     }
 
     public function hitungLuasPermukaanKubus($sisi)
