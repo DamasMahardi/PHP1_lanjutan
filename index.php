@@ -471,56 +471,47 @@ class BangunRuang
 
     public function hitungLuasPermukaanKubus($sisi)
     {
-        $luasPermukaan = 6 * pow($sisi, 2);
-        return $luasPermukaan;
+        return 6 * pow($sisi, 2);
     }
 
     public function hitungVolumeBalok($panjang, $lebar, $tinggi)
     {
-        $volume = $panjang * $lebar * $tinggi;
-        return $volume;
+        return $panjang * $lebar * $tinggi;
     }
 
     public function hitungLuasPermukaanBalok($panjang, $lebar, $tinggi)
     {
-        $luasPermukaan = 2 * ($panjang * $lebar + $panjang * $tinggi + $lebar * $tinggi);
-        return $luasPermukaan;
+        return 2 * ($panjang * $lebar + $panjang * $tinggi + $lebar * $tinggi);
     }
 
     public function hitungVolumeSilinder($jariJari, $tinggi)
     {
-        $volume = M_PI * pow($jariJari, 2) * $tinggi;
-        return $volume;
+        return M_PI * pow($jariJari, 2) * $tinggi;
     }
 
     public function hitungLuasPermukaanSilinder($jariJari, $tinggi)
     {
-        $luasPermukaan = 2 * M_PI * $jariJari * ($jariJari + $tinggi);
-        return $luasPermukaan;
+        return 2 * M_PI * $jariJari * ($jariJari + $tinggi);
     }
 
     public function  hitungVolumeKerucut($jariJari, $tinggi)
     {
-        $volume = (1 / 3) * M_PI * pow($jariJari, 2) * $tinggi;
-        return $volume;
+        return (1 / 3) * M_PI * pow($jariJari, 2) * $tinggi;
     }
 
     public function hitungLuasPermukaanKerucut($jariJari, $garisPelukis)
     {
-        $luasPermukaan = M_PI * $jariJari * ($jariJari + $garisPelukis);
-        return $luasPermukaan;
+        return M_PI * $jariJari * ($jariJari + $garisPelukis);
     }
 
     public function hitungVolumeBola($jariJari)
     {
-        $volume = (4 / 3) * M_PI * pow($jariJari, 3);
-        return $volume;
+        return (4 / 3) * M_PI * pow($jariJari, 3);
     }
 
     public function hitungLuasPermukaanBola($jariJari)
     {
-        $luasPermukaan = 4 * M_PI * pow($jariJari, 2);
-        return $luasPermukaan;
+        return 4 * M_PI * pow($jariJari, 2);
     }
 }
 
