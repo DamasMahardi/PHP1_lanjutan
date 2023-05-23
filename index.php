@@ -1,2 +1,2 @@
 <?php
-print("TES");
+echo "Hello world";
