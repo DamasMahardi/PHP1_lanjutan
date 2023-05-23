@@ -175,44 +175,44 @@ class FungsiLogaritma
     }
 }
 
-class TriGonoMetri
-{
-    public static function hitungArctan($nilai)
-    {
-        // Implementasi perhitungan arctan
-        return atan($nilai);
-    }
+// class TriGonoMetri
+// {
+//     public static function hitungArctan($nilai)
+//     {
+//         // Implementasi perhitungan arctan
+//         return atan($nilai);
+//     }
 
-    public static function hitungCot($nilai)
-    {
-        // Implementasi perhitungan cot
-        return 1 / tan($nilai);
-    }
+//     public static function hitungCot($nilai)
+//     {
+//         // Implementasi perhitungan cot
+//         return 1 / tan($nilai);
+//     }
 
-    public static function hitungSec($nilai)
-    {
-        // Implementasi perhitungan sec
-        return 1 / cos($nilai);
-    }
+//     public static function hitungSec($nilai)
+//     {
+//         // Implementasi perhitungan sec
+//         return 1 / cos($nilai);
+//     }
 
-    public static function hitungCsc($nilai)
-    {
-        // Implementasi perhitungan csc
-        return 1 / sin($nilai);
-    }
+//     public static function hitungCsc($nilai)
+//     {
+//         // Implementasi perhitungan csc
+//         return 1 / sin($nilai);
+//     }
 
-    public static function hitungArccos($nilai)
-    {
-        // Implementasi perhitungan arccos
-        return acos($nilai);
-    }
+//     public static function hitungArccos($nilai)
+//     {
+//         // Implementasi perhitungan arccos
+//         return acos($nilai);
+//     }
 
-    public static function hitungArcsin($nilai)
-    {
-        // Implementasi perhitungan arcsin
-        return asin($nilai);
-    }
-}
+//     public static function hitungArcsin($nilai)
+//     {
+//         // Implementasi perhitungan arcsin
+//         return asin($nilai);
+//     }
+// }
 
 class FungsiBoolean
 {
@@ -426,16 +426,16 @@ class Aljabar
     }
 
     //Fungsi getOperator
-    private static function getOperator($inequality)
-    {
-        if (strpos($inequality, "<=") !== false) {
-            return "<=";
-        } elseif (strpos($inequality, ">=") !== false) {
-            return ">=";
-        } else {
-            return "";
-        }
-    }
+    // private static function getOperator($inequality)
+    // {
+    //     if (strpos($inequality, "<=") !== false) {
+    //         return "<=";
+    //     } elseif (strpos($inequality, ">=") !== false) {
+    //         return ">=";
+    //     } else {
+    //         return "";
+    //     }
+    // }
 }
 
 class BangunRuang
@@ -491,205 +491,205 @@ class BangunRuang
     }
 }
 
-class HitungJarak
-{
-    public function hitungJarakAntarTitik($x1, $y1, $x2, $y2)
-    {
-        $jarak = sqrt(pow($x2 - $x1, 2) + pow($y2 - $y1, 2));
-        return $jarak;
-    }
+// class HitungJarak
+// {
+//     public function hitungJarakAntarTitik($x1, $y1, $x2, $y2)
+//     {
+//         $jarak = sqrt(pow($x2 - $x1, 2) + pow($y2 - $y1, 2));
+//         return $jarak;
+//     }
 
-    public function hitungJarakTempuh($kecepatan, $waktu)
-    {
-        $jarak = $kecepatan * $waktu;
-        return $jarak;
-    }
+//     public function hitungJarakTempuh($kecepatan, $waktu)
+//     {
+//         $jarak = $kecepatan * $waktu;
+//         return $jarak;
+//     }
 
-    public function hitungJarakSudut($sudut, $jariJari)
-    {
-        $jarak = $sudut * $jariJari;
-        return $jarak;
-    }
+//     public function hitungJarakSudut($sudut, $jariJari)
+//     {
+//         $jarak = $sudut * $jariJari;
+//         return $jarak;
+//     }
 
-    public function hitungJarakAntaraGaris($A, $B, $C, $x, $y)
-    {
-        $jarak = abs($A * $x + $B * $y + $C) / sqrt(pow($A, 2) + pow($B, 2));
-        return $jarak;
-    }
+//     public function hitungJarakAntaraGaris($A, $B, $C, $x, $y)
+//     {
+//         $jarak = abs($A * $x + $B * $y + $C) / sqrt(pow($A, 2) + pow($B, 2));
+//         return $jarak;
+//     }
 
-    public function hitungJarakManhattan($x1, $y1, $x2, $y2)
-    {
-        $jarak = abs($x2 - $x1) + abs($y2 - $y1);
-        return $jarak;
-    }
+//     public function hitungJarakManhattan($x1, $y1, $x2, $y2)
+//     {
+//         $jarak = abs($x2 - $x1) + abs($y2 - $y1);
+//         return $jarak;
+//     }
 
-    public function hitungJarakHaversine($lat1, $lon1, $lat2, $lon2)
-    {
-        $r = 6371; // Jari-jari rata-rata Bumi dalam kilometer
-        $dlat = deg2rad($lat2 - $lat1);
-        $dlon = deg2rad($lon2 - $lon1);
-        $a = sin($dlat / 2) * sin($dlat / 2) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dlon / 2) * sin($dlon / 2);
-        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
-        $jarak = $r * $c;
-        return $jarak;
-    }
-}
+//     public function hitungJarakHaversine($lat1, $lon1, $lat2, $lon2)
+//     {
+//         $r = 6371; // Jari-jari rata-rata Bumi dalam kilometer
+//         $dlat = deg2rad($lat2 - $lat1);
+//         $dlon = deg2rad($lon2 - $lon1);
+//         $a = sin($dlat / 2) * sin($dlat / 2) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dlon / 2) * sin($dlon / 2);
+//         $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+//         $jarak = $r * $c;
+//         return $jarak;
+//     }
+// }
 
-class HitungBerat
-{
-    public function hitungBeratBenda($massa, $gravitasi)
-    {
-        $berat = $massa * $gravitasi;
-        return $berat;
-    }
+// class HitungBerat
+// {
+//     public function hitungBeratBenda($massa, $gravitasi)
+//     {
+//         $berat = $massa * $gravitasi;
+//         return $berat;
+//     }
 
-    public function hitungBeratJenis($massaJenis, $gravitasi)
-    {
-        $beratJenis = $massaJenis * $gravitasi;
-        return $beratJenis;
-    }
+//     public function hitungBeratJenis($massaJenis, $gravitasi)
+//     {
+//         $beratJenis = $massaJenis * $gravitasi;
+//         return $beratJenis;
+//     }
 
-    public function hitungBeratMolekul($massaAtom1, $jumlahAtom1, $massaAtom2, $jumlahAtom2)
-    {
-        $beratMolekul = ($massaAtom1 * $jumlahAtom1) + ($massaAtom2 * $jumlahAtom2);
-        return $beratMolekul;
-    }
+//     public function hitungBeratMolekul($massaAtom1, $jumlahAtom1, $massaAtom2, $jumlahAtom2)
+//     {
+//         $beratMolekul = ($massaAtom1 * $jumlahAtom1) + ($massaAtom2 * $jumlahAtom2);
+//         return $beratMolekul;
+//     }
 
-    public function hitungBeratIsotop($persentaseIsotop1, $massaIsotop1, $persentaseIsotop2, $massaIsotop2)
-    {
-        $beratIsotop = ($persentaseIsotop1 * $massaIsotop1) + ($persentaseIsotop2 * $massaIsotop2);
-        return $beratIsotop;
-    }
+//     public function hitungBeratIsotop($persentaseIsotop1, $massaIsotop1, $persentaseIsotop2, $massaIsotop2)
+//     {
+//         $beratIsotop = ($persentaseIsotop1 * $massaIsotop1) + ($persentaseIsotop2 * $massaIsotop2);
+//         return $beratIsotop;
+//     }
 
-    public function hitungBeratMolekulRelatif($massaAtom1, $jumlahAtom1, $massaAtom2, $jumlahAtom2)
-    {
-        $beratMolekulRelatif = ($massaAtom1 * $jumlahAtom1) + ($massaAtom2 * $jumlahAtom2);
-        return $beratMolekulRelatif;
-    }
+//     public function hitungBeratMolekulRelatif($massaAtom1, $jumlahAtom1, $massaAtom2, $jumlahAtom2)
+//     {
+//         $beratMolekulRelatif = ($massaAtom1 * $jumlahAtom1) + ($massaAtom2 * $jumlahAtom2);
+//         return $beratMolekulRelatif;
+//     }
 
-    public function hitungBeratBadanIdeal($berat, $tinggi)
-    {
-        $beratBadanIdeal = $berat / ($tinggi * $tinggi);
-        return $beratBadanIdeal;
-    }
-}
+//     public function hitungBeratBadanIdeal($berat, $tinggi)
+//     {
+//         $beratBadanIdeal = $berat / ($tinggi * $tinggi);
+//         return $beratBadanIdeal;
+//     }
+// }
 
-class HitungFrekuensi
-{
-    public function hitungFrekuensiGelombang($periode)
-    {
-        $frekuensi = 1 / $periode;
-        return $frekuensi;
-    }
+// class HitungFrekuensi
+// {
+//     public function hitungFrekuensiGelombang($periode)
+//     {
+//         $frekuensi = 1 / $periode;
+//         return $frekuensi;
+//     }
 
-    public function hitungFrekuensiSudut($frekuensi)
-    {
-        $frekuensiSudut = 2 * pi() * $frekuensi;
-        return $frekuensiSudut;
-    }
+//     public function hitungFrekuensiSudut($frekuensi)
+//     {
+//         $frekuensiSudut = 2 * pi() * $frekuensi;
+//         return $frekuensiSudut;
+//     }
 
-    public function hitungFrekuensiMusik($oktaf, $frekuensiDasar)
-    {
-        $frekuensi = $oktaf * $frekuensiDasar;
-        return $frekuensi;
-    }
+//     public function hitungFrekuensiMusik($oktaf, $frekuensiDasar)
+//     {
+//         $frekuensi = $oktaf * $frekuensiDasar;
+//         return $frekuensi;
+//     }
 
-    public function hitungFrekuensiGelombangElektromagnetik($panjangGelombang)
-    {
-        $frekuensi = 3 * pow(10, 8) / $panjangGelombang;
-        return $frekuensi;
-    }
+//     public function hitungFrekuensiGelombangElektromagnetik($panjangGelombang)
+//     {
+//         $frekuensi = 3 * pow(10, 8) / $panjangGelombang;
+//         return $frekuensi;
+//     }
 
-    public function hitungFrekuensiRotasi($jumlahPutaran, $waktu)
-    {
-        $frekuensi = $jumlahPutaran / $waktu;
-        return $frekuensi;
-    }
+//     public function hitungFrekuensiRotasi($jumlahPutaran, $waktu)
+//     {
+//         $frekuensi = $jumlahPutaran / $waktu;
+//         return $frekuensi;
+//     }
 
-    public function hitungFrekuensiDataStatistik($jumlahDataTertentu, $jumlahTotalData)
-    {
-        $frekuensi = $jumlahDataTertentu / $jumlahTotalData;
-        return $frekuensi;
-    }
-}
+//     public function hitungFrekuensiDataStatistik($jumlahDataTertentu, $jumlahTotalData)
+//     {
+//         $frekuensi = $jumlahDataTertentu / $jumlahTotalData;
+//         return $frekuensi;
+//     }
+// }
 
-class HitungGetaran
-{
-    public function hitungFrekuensi($periode)
-    {
-        $frekuensi = 1 / $periode;
-        return $frekuensi;
-    }
+// class HitungGetaran
+// {
+//     public function hitungFrekuensi($periode)
+//     {
+//         $frekuensi = 1 / $periode;
+//         return $frekuensi;
+//     }
 
-    public function hitungPeriode($frekuensi)
-    {
-        $periode = 1 / $frekuensi;
-        return $periode;
-    }
+//     public function hitungPeriode($frekuensi)
+//     {
+//         $periode = 1 / $frekuensi;
+//         return $periode;
+//     }
 
-    public function hitungSudutKecepatan($frekuensi)
-    {
-        $sudutKecepatan = 2 * pi() * $frekuensi;
-        return $sudutKecepatan;
-    }
+//     public function hitungSudutKecepatan($frekuensi)
+//     {
+//         $sudutKecepatan = 2 * pi() * $frekuensi;
+//         return $sudutKecepatan;
+//     }
 
-    public function hitungKecepatanAmplitudoMaksimum($sudutKecepatan, $amplitudo)
-    {
-        $kecepatanAmplitudoMaksimum = $sudutKecepatan * $amplitudo;
-        return $kecepatanAmplitudoMaksimum;
-    }
+//     public function hitungKecepatanAmplitudoMaksimum($sudutKecepatan, $amplitudo)
+//     {
+//         $kecepatanAmplitudoMaksimum = $sudutKecepatan * $amplitudo;
+//         return $kecepatanAmplitudoMaksimum;
+//     }
 
-    public function hitungPercepatanAmplitudoMaksimum($sudutKecepatan, $amplitudo)
-    {
-        $percepatanAmplitudoMaksimum = pow($sudutKecepatan, 2) * $amplitudo;
-        return $percepatanAmplitudoMaksimum;
-    }
+//     public function hitungPercepatanAmplitudoMaksimum($sudutKecepatan, $amplitudo)
+//     {
+//         $percepatanAmplitudoMaksimum = pow($sudutKecepatan, 2) * $amplitudo;
+//         return $percepatanAmplitudoMaksimum;
+//     }
 
-    public function hitungPercepatanSentripetal($sudutKecepatan, $radius)
-    {
-        $percepatanSentripetal = pow($sudutKecepatan, 2) * $radius;
-        return $percepatanSentripetal;
-    }
+//     public function hitungPercepatanSentripetal($sudutKecepatan, $radius)
+//     {
+//         $percepatanSentripetal = pow($sudutKecepatan, 2) * $radius;
+//         return $percepatanSentripetal;
+//     }
 
-    public function hitungEnergiKinetikGetaran($massa, $sudutKecepatan, $amplitudo)
-    {
-        $energiKinetikGetaran = 0.5 * $massa * pow($sudutKecepatan, 2) * pow($amplitudo, 2);
-        return $energiKinetikGetaran;
-    }
-}
+//     public function hitungEnergiKinetikGetaran($massa, $sudutKecepatan, $amplitudo)
+//     {
+//         $energiKinetikGetaran = 0.5 * $massa * pow($sudutKecepatan, 2) * pow($amplitudo, 2);
+//         return $energiKinetikGetaran;
+//     }
+// }
 
-class HitungKemiringan
-{
-    public function hitungKemiringanGaris($x1, $y1, $x2, $y2)
-    {
-        $kemiringan = ($y2 - $y1) / ($x2 - $x1);
-        return $kemiringan;
-    }
+// class HitungKemiringan
+// {
+//     public function hitungKemiringanGaris($x1, $y1, $x2, $y2)
+//     {
+//         $kemiringan = ($y2 - $y1) / ($x2 - $x1);
+//         return $kemiringan;
+//     }
 
-    public function hitungKemiringanTangen($kemiringan)
-    {
-        $kemiringanTangen = atan($kemiringan);
-        return $kemiringanTangen;
-    }
+//     public function hitungKemiringanTangen($kemiringan)
+//     {
+//         $kemiringanTangen = atan($kemiringan);
+//         return $kemiringanTangen;
+//     }
 
-    public function hitungKemiringanSudut($kemiringan)
-    {
-        $kemiringanSudut = asin($kemiringan / sqrt(1 + pow($kemiringan, 2)));
-        return $kemiringanSudut;
-    }
+//     public function hitungKemiringanSudut($kemiringan)
+//     {
+//         $kemiringanSudut = asin($kemiringan / sqrt(1 + pow($kemiringan, 2)));
+//         return $kemiringanSudut;
+//     }
 
-    public function hitungKemiringanPermukaan($dy, $dx)
-    {
-        $kemiringanPermukaan = atan($dy / $dx);
-        return $kemiringanPermukaan;
-    }
+//     public function hitungKemiringanPermukaan($dy, $dx)
+//     {
+//         $kemiringanPermukaan = atan($dy / $dx);
+//         return $kemiringanPermukaan;
+//     }
 
-    public function hitungKemiringanPersamaanLinear($a, $b)
-    {
-        $kemiringanPersamaanLinear = -$a / $b;
-        return $kemiringanPersamaanLinear;
-    }
-}
+//     public function hitungKemiringanPersamaanLinear($a, $b)
+//     {
+//         $kemiringanPersamaanLinear = -$a / $b;
+//         return $kemiringanPersamaanLinear;
+//     }
+// }
 
 class HitungGelombang
 {
@@ -1479,35 +1479,35 @@ $angka = 10.5;
 $pecahan = $kalkulator->hitungPecahan($angka);
 echo "Pecahan dari angka $angka adalah: " . $pecahan[0] . " dan " . $pecahan[1] . "<br>";
 
-// Hitung arctan
-$nilaiArctan = 0.5;
-$hasilArctan = TriGonoMetri::hitungArctan($nilaiArctan);
-echo "Hasil perhitungan arctan dari " . $nilaiArctan . " adalah: " . $hasilArctan . "<br>";
+// // Hitung arctan
+// $nilaiArctan = 0.5;
+// $hasilArctan = TriGonoMetri::hitungArctan($nilaiArctan);
+// echo "Hasil perhitungan arctan dari " . $nilaiArctan . " adalah: " . $hasilArctan . "<br>";
 
-// Hitung cot
-$nilaiCot = 1;
-$hasilCot = TriGonoMetri::hitungCot($nilaiCot);
-echo "Hasil perhitungan cot dari " . $nilaiCot . " adalah: " . $hasilCot . "<br>";
+// // Hitung cot
+// $nilaiCot = 1;
+// $hasilCot = TriGonoMetri::hitungCot($nilaiCot);
+// echo "Hasil perhitungan cot dari " . $nilaiCot . " adalah: " . $hasilCot . "<br>";
 
-// Hitung sec
-$nilaiSec = 0.8;
-$hasilSec = TriGonoMetri::hitungSec($nilaiSec);
-echo "Hasil perhitungan sec dari " . $nilaiSec . " adalah: " . $hasilSec . "<br>";
+// // Hitung sec
+// $nilaiSec = 0.8;
+// $hasilSec = TriGonoMetri::hitungSec($nilaiSec);
+// echo "Hasil perhitungan sec dari " . $nilaiSec . " adalah: " . $hasilSec . "<br>";
 
-// Hitung csc
-$nilaiCsc = 1.2;
-$hasilCsc = TriGonoMetri::hitungCsc($nilaiCsc);
-echo "Hasil perhitungan csc dari " . $nilaiCsc . " adalah: " . $hasilCsc . "<br>";
+// // Hitung csc
+// $nilaiCsc = 1.2;
+// $hasilCsc = TriGonoMetri::hitungCsc($nilaiCsc);
+// echo "Hasil perhitungan csc dari " . $nilaiCsc . " adalah: " . $hasilCsc . "<br>";
 
-// Hitung arccos
-$nilaiArccos = 0.3;
-$hasilArccos = TriGonoMetri::hitungArccos($nilaiArccos);
-echo "Hasil perhitungan arccos dari " . $nilaiArccos . " adalah: " . $hasilArccos . "<br>";
+// // Hitung arccos
+// $nilaiArccos = 0.3;
+// $hasilArccos = TriGonoMetri::hitungArccos($nilaiArccos);
+// echo "Hasil perhitungan arccos dari " . $nilaiArccos . " adalah: " . $hasilArccos . "<br>";
 
-// Hitung arcsin
-$nilaiArcsin = 0.6;
-$hasilArcsin = TriGonoMetri::hitungArcsin($nilaiArcsin);
-echo "Hasil perhitungan arcsin dari " . $nilaiArcsin . " adalah: " . $hasilArcsin . "<br>";
+// // Hitung arcsin
+// $nilaiArcsin = 0.6;
+// $hasilArcsin = TriGonoMetri::hitungArcsin($nilaiArcsin);
+// echo "Hasil perhitungan arcsin dari " . $nilaiArcsin . " adalah: " . $hasilArcsin . "<br>";
 
 // Hitung operasi AND
 $a = true;
@@ -1664,140 +1664,140 @@ echo "Volume Bola: " . $volumeBola . "<br>";
 $luasPermukaanBola = $bangunRuang->hitungLuasPermukaanBola($jariJariBola);
 echo "Luas Permukaan Bola: " . $luasPermukaanBola . "<br>";
 
-//penggunaan class HitungJarak
-$hitungJarak = new HitungJarak();
+// //penggunaan class HitungJarak
+// $hitungJarak = new HitungJarak();
 
-// Menghitung jarak antar titik koordinat (2, 3) dan (5, 7)
-$jarakAntarTitik = $hitungJarak->hitungJarakAntarTitik(2, 3, 5, 7);
-echo "Jarak Antar Titik: " . $jarakAntarTitik . "<br>";
+// // Menghitung jarak antar titik koordinat (2, 3) dan (5, 7)
+// $jarakAntarTitik = $hitungJarak->hitungJarakAntarTitik(2, 3, 5, 7);
+// echo "Jarak Antar Titik: " . $jarakAntarTitik . "<br>";
 
-// Menghitung jarak tempuh dengan kecepatan 10 m/s dan waktu 5 detik
-$jarakTempuh = $hitungJarak->hitungJarakTempuh(10, 5);
-echo "Jarak Tempuh: " . $jarakTempuh . "<br>";
+// // Menghitung jarak tempuh dengan kecepatan 10 m/s dan waktu 5 detik
+// $jarakTempuh = $hitungJarak->hitungJarakTempuh(10, 5);
+// echo "Jarak Tempuh: " . $jarakTempuh . "<br>";
 
-// Menghitung jarak sudut dengan sudut 45 derajat dan jari-jari 3
-$jarakSudut = $hitungJarak->hitungJarakSudut(45, 3);
-echo "Jarak Sudut: " . $jarakSudut . "<br>";
+// // Menghitung jarak sudut dengan sudut 45 derajat dan jari-jari 3
+// $jarakSudut = $hitungJarak->hitungJarakSudut(45, 3);
+// echo "Jarak Sudut: " . $jarakSudut . "<br>";
 
-// Menghitung jarak antara garis Ax + By + C = 0 dengan titik (2, 3)
-$jarakAntaraGaris = $hitungJarak->hitungJarakAntaraGaris(2, -3, 4, 2, 3);
-echo "Jarak Antara Garis: " . $jarakAntaraGaris . "<br>";
+// // Menghitung jarak antara garis Ax + By + C = 0 dengan titik (2, 3)
+// $jarakAntaraGaris = $hitungJarak->hitungJarakAntaraGaris(2, -3, 4, 2, 3);
+// echo "Jarak Antara Garis: " . $jarakAntaraGaris . "<br>";
 
-// Menghitung jarak Manhattan antara titik koordinat (2, 3) dan (7, 10)
-$jarakManhattan = $hitungJarak->hitungJarakManhattan(2, 3, 7, 10);
-echo "Jarak Manhattan: " . $jarakManhattan . "<br>";
+// // Menghitung jarak Manhattan antara titik koordinat (2, 3) dan (7, 10)
+// $jarakManhattan = $hitungJarak->hitungJarakManhattan(2, 3, 7, 10);
+// echo "Jarak Manhattan: " . $jarakManhattan . "<br>";
 
-// Menghitung jarak Haversine antara titik koordinat (40.7128, -74.0060) dan (34.0522, -118.2437)
-$jarakHaversine = $hitungJarak->hitungJarakHaversine(40.7128, -74.0060, 34.0522, -118.2437);
-echo "Jarak Haversine: " . $jarakHaversine . "<br>";
+// // Menghitung jarak Haversine antara titik koordinat (40.7128, -74.0060) dan (34.0522, -118.2437)
+// $jarakHaversine = $hitungJarak->hitungJarakHaversine(40.7128, -74.0060, 34.0522, -118.2437);
+// echo "Jarak Haversine: " . $jarakHaversine . "<br>";
 
-//penggunaan class HitungBerat
-$hitungBerat = new HitungBerat();
+// //penggunaan class HitungBerat
+// $hitungBerat = new HitungBerat();
 
-// Menghitung berat benda dengan massa 10 kg dan gravitasi 9.8 m/s^2
-$beratBenda = $hitungBerat->hitungBeratBenda(10, 9.8);
-echo "Berat Benda: " . $beratBenda . "<br>";
+// // Menghitung berat benda dengan massa 10 kg dan gravitasi 9.8 m/s^2
+// $beratBenda = $hitungBerat->hitungBeratBenda(10, 9.8);
+// echo "Berat Benda: " . $beratBenda . "<br>";
 
-// Menghitung berat jenis dengan massa jenis 5 kg/m^3 dan gravitasi 9.8 m/s^2
-$beratJenis = $hitungBerat->hitungBeratJenis(5, 9.8);
-echo "Berat Jenis: " . $beratJenis . "<br>";
+// // Menghitung berat jenis dengan massa jenis 5 kg/m^3 dan gravitasi 9.8 m/s^2
+// $beratJenis = $hitungBerat->hitungBeratJenis(5, 9.8);
+// echo "Berat Jenis: " . $beratJenis . "<br>";
 
-// Menghitung berat molekul dengan massa atom dan jumlah atom yang terlibat
-$beratMolekul = $hitungBerat->hitungBeratMolekul(12, 2, 16, 1);
-echo "Berat Molekul: " . $beratMolekul . "<br>";
+// // Menghitung berat molekul dengan massa atom dan jumlah atom yang terlibat
+// $beratMolekul = $hitungBerat->hitungBeratMolekul(12, 2, 16, 1);
+// echo "Berat Molekul: " . $beratMolekul . "<br>";
 
-// Menghitung berat isotop dengan persentase isotop dan massa isotop yang terlibat
-$beratIsotop = $hitungBerat->hitungBeratIsotop(70, 12, 30, 14);
-echo "Berat Isotop: " . $beratIsotop . "<br>";
+// // Menghitung berat isotop dengan persentase isotop dan massa isotop yang terlibat
+// $beratIsotop = $hitungBerat->hitungBeratIsotop(70, 12, 30, 14);
+// echo "Berat Isotop: " . $beratIsotop . "<br>";
 
-// Menghitung berat molekul relatif dengan massa atom dan jumlah atom dalam senyawa
-$beratMolekulRelatif = $hitungBerat->hitungBeratMolekulRelatif(12, 2, 16, 1);
-echo "Berat Molekul Relatif: " . $beratMolekulRelatif . "<br>";
+// // Menghitung berat molekul relatif dengan massa atom dan jumlah atom dalam senyawa
+// $beratMolekulRelatif = $hitungBerat->hitungBeratMolekulRelatif(12, 2, 16, 1);
+// echo "Berat Molekul Relatif: " . $beratMolekulRelatif . "<br>";
 
-// Menghitung berat badan ideal (BMI) dengan berat dan tinggi
-$beratBadanIdeal = $hitungBerat->hitungBeratBadanIdeal(70, 1.75);
-echo "Berat Badan Ideal (BMI): " . $beratBadanIdeal . "<br>";
+// // Menghitung berat badan ideal (BMI) dengan berat dan tinggi
+// $beratBadanIdeal = $hitungBerat->hitungBeratBadanIdeal(70, 1.75);
+// echo "Berat Badan Ideal (BMI): " . $beratBadanIdeal . "<br>";
 
-//penggunaan class HitungFrekuensi
-$hitungFrekuensi = new HitungFrekuensi();
+// //penggunaan class HitungFrekuensi
+// $hitungFrekuensi = new HitungFrekuensi();
 
-// Menghitung frekuensi gelombang dengan periode 0.5 detik
-$frekuensiGelombang = $hitungFrekuensi->hitungFrekuensiGelombang(0.5);
-echo "Frekuensi Gelombang: " . $frekuensiGelombang . " Hz<br>";
+// // Menghitung frekuensi gelombang dengan periode 0.5 detik
+// $frekuensiGelombang = $hitungFrekuensi->hitungFrekuensiGelombang(0.5);
+// echo "Frekuensi Gelombang: " . $frekuensiGelombang . " Hz<br>";
 
-// Menghitung frekuensi sudut dengan frekuensi 100 Hz
-$frekuensiSudut = $hitungFrekuensi->hitungFrekuensiSudut(100);
-echo "Frekuensi Sudut: " . $frekuensiSudut . " rad/s<br>";
+// // Menghitung frekuensi sudut dengan frekuensi 100 Hz
+// $frekuensiSudut = $hitungFrekuensi->hitungFrekuensiSudut(100);
+// echo "Frekuensi Sudut: " . $frekuensiSudut . " rad/s<br>";
 
-// Menghitung frekuensi musik dengan oktaf 3 dan frekuensi dasar 440 Hz
-$frekuensiMusik = $hitungFrekuensi->hitungFrekuensiMusik(3, 440);
-echo "Frekuensi Musik: " . $frekuensiMusik . " Hz<br>";
+// // Menghitung frekuensi musik dengan oktaf 3 dan frekuensi dasar 440 Hz
+// $frekuensiMusik = $hitungFrekuensi->hitungFrekuensiMusik(3, 440);
+// echo "Frekuensi Musik: " . $frekuensiMusik . " Hz<br>";
 
-// Menghitung frekuensi gelombang elektromagnetik dengan panjang gelombang 2 meter
-$frekuensiGelombangElektromagnetik = $hitungFrekuensi->hitungFrekuensiGelombangElektromagnetik(2);
-echo "Frekuensi Gelombang Elektromagnetik: " . $frekuensiGelombangElektromagnetik . " Hz<br>";
+// // Menghitung frekuensi gelombang elektromagnetik dengan panjang gelombang 2 meter
+// $frekuensiGelombangElektromagnetik = $hitungFrekuensi->hitungFrekuensiGelombangElektromagnetik(2);
+// echo "Frekuensi Gelombang Elektromagnetik: " . $frekuensiGelombangElektromagnetik . " Hz<br>";
 
-// Menghitung frekuensi rotasi dengan jumlah putaran 5 dan waktu 2 detik
-$frekuensiRotasi = $hitungFrekuensi->hitungFrekuensiRotasi(5, 2);
-echo "Frekuensi Rotasi: " . $frekuensiRotasi . " Hz<br>";
+// // Menghitung frekuensi rotasi dengan jumlah putaran 5 dan waktu 2 detik
+// $frekuensiRotasi = $hitungFrekuensi->hitungFrekuensiRotasi(5, 2);
+// echo "Frekuensi Rotasi: " . $frekuensiRotasi . " Hz<br>";
 
-// Menghitung frekuensi data dalam statistik dengan jumlah data tertentu 20 dan jumlah total data 100
-$frekuensiDataStatistik = $hitungFrekuensi->hitungFrekuensiDataStatistik(20, 100);
-echo "Frekuensi Data dalam Statistik: " . $frekuensiDataStatistik . "<br>";
+// // Menghitung frekuensi data dalam statistik dengan jumlah data tertentu 20 dan jumlah total data 100
+// $frekuensiDataStatistik = $hitungFrekuensi->hitungFrekuensiDataStatistik(20, 100);
+// echo "Frekuensi Data dalam Statistik: " . $frekuensiDataStatistik . "<br>";
 
-//penggunaan class HitungGetaran
-$hitungGetaran = new HitungGetaran();
+// //penggunaan class HitungGetaran
+// $hitungGetaran = new HitungGetaran();
 
-// Menghitung frekuensi dengan periode 0.5 detik
-$frekuensi = $hitungGetaran->hitungFrekuensi(0.5);
-echo "Frekuensi: " . $frekuensi . " Hz<br>";
+// // Menghitung frekuensi dengan periode 0.5 detik
+// $frekuensi = $hitungGetaran->hitungFrekuensi(0.5);
+// echo "Frekuensi: " . $frekuensi . " Hz<br>";
 
-// Menghitung periode dengan frekuensi 100 Hz
-$periode = $hitungGetaran->hitungPeriode(100);
-echo "Periode: " . $periode . " s<br>";
+// // Menghitung periode dengan frekuensi 100 Hz
+// $periode = $hitungGetaran->hitungPeriode(100);
+// echo "Periode: " . $periode . " s<br>";
 
-// Menghitung sudut kecepatan dengan frekuensi 100 Hz
-$sudutKecepatan = $hitungGetaran->hitungSudutKecepatan(100);
-echo "Sudut Kecepatan: " . $sudutKecepatan . " rad/s<br>";
+// // Menghitung sudut kecepatan dengan frekuensi 100 Hz
+// $sudutKecepatan = $hitungGetaran->hitungSudutKecepatan(100);
+// echo "Sudut Kecepatan: " . $sudutKecepatan . " rad/s<br>";
 
-// Menghitung kecepatan amplitudo maksimum dengan sudut kecepatan 2 rad/s dan amplitudo 0.1 meter
-$kecepatanAmplitudoMaksimum = $hitungGetaran->hitungKecepatanAmplitudoMaksimum(2, 0.1);
-echo "Kecepatan Amplitudo Maksimum: " . $kecepatanAmplitudoMaksimum . " m/s<br>";
+// // Menghitung kecepatan amplitudo maksimum dengan sudut kecepatan 2 rad/s dan amplitudo 0.1 meter
+// $kecepatanAmplitudoMaksimum = $hitungGetaran->hitungKecepatanAmplitudoMaksimum(2, 0.1);
+// echo "Kecepatan Amplitudo Maksimum: " . $kecepatanAmplitudoMaksimum . " m/s<br>";
 
-// Menghitung percepatan amplitudo maksimum dengan sudut kecepatan 2 rad/s dan amplitudo 0.1 meter
-$percepatanAmplitudoMaksimum = $hitungGetaran->hitungPercepatanAmplitudoMaksimum(2, 0.1);
-echo "Percepatan Amplitudo Maksimum: " . $percepatanAmplitudoMaksimum . " m/s²<br>";
+// // Menghitung percepatan amplitudo maksimum dengan sudut kecepatan 2 rad/s dan amplitudo 0.1 meter
+// $percepatanAmplitudoMaksimum = $hitungGetaran->hitungPercepatanAmplitudoMaksimum(2, 0.1);
+// echo "Percepatan Amplitudo Maksimum: " . $percepatanAmplitudoMaksimum . " m/s²<br>";
 
-// Menghitung percepatan sentripetal dengan sudut kecepatan 2 rad/s dan jari-jari 0.5 meter
-$percepatanSentripetal = $hitungGetaran->hitungPercepatanSentripetal(2, 0.5);
-echo "Percepatan Sentripetal: " . $percepatanSentripetal . " m/s²<br>";
+// // Menghitung percepatan sentripetal dengan sudut kecepatan 2 rad/s dan jari-jari 0.5 meter
+// $percepatanSentripetal = $hitungGetaran->hitungPercepatanSentripetal(2, 0.5);
+// echo "Percepatan Sentripetal: " . $percepatanSentripetal . " m/s²<br>";
 
-// Menghitung energi kinetik getaran dengan massa 1 kg, sudut kecepatan 2 rad/s, dan amplitudo 0.1 meter
-$energiKinetikGetaran = $hitungGetaran->hitungEnergiKinetikGetaran(1, 2, 0.1);
-echo "Energi Kinetik Getaran: " . $energiKinetikGetaran . " J<br>";
+// // Menghitung energi kinetik getaran dengan massa 1 kg, sudut kecepatan 2 rad/s, dan amplitudo 0.1 meter
+// $energiKinetikGetaran = $hitungGetaran->hitungEnergiKinetikGetaran(1, 2, 0.1);
+// echo "Energi Kinetik Getaran: " . $energiKinetikGetaran . " J<br>";
 
-//penggunaan class HitungKemiringan
-$hitungKemiringan = new HitungKemiringan();
+// //penggunaan class HitungKemiringan
+// $hitungKemiringan = new HitungKemiringan();
 
-// Menghitung kemiringan garis antara titik (2, 4) dan (6, 10)
-$kemiringanGaris = $hitungKemiringan->hitungKemiringanGaris(2, 4, 6, 10);
-echo "Kemiringan Garis: " . $kemiringanGaris . "<br>";
+// // Menghitung kemiringan garis antara titik (2, 4) dan (6, 10)
+// $kemiringanGaris = $hitungKemiringan->hitungKemiringanGaris(2, 4, 6, 10);
+// echo "Kemiringan Garis: " . $kemiringanGaris . "<br>";
 
-// Menghitung kemiringan tangen dari kemiringan garis sebelumnya
-$kemiringanTangen = $hitungKemiringan->hitungKemiringanTangen($kemiringanGaris);
-echo "Kemiringan Tangen: " . $kemiringanTangen . "<br>";
+// // Menghitung kemiringan tangen dari kemiringan garis sebelumnya
+// $kemiringanTangen = $hitungKemiringan->hitungKemiringanTangen($kemiringanGaris);
+// echo "Kemiringan Tangen: " . $kemiringanTangen . "<br>";
 
-// Menghitung kemiringan sudut dari kemiringan garis sebelumnya
-$kemiringanSudut = $hitungKemiringan->hitungKemiringanSudut($kemiringanGaris);
-echo "Kemiringan Sudut: " . $kemiringanSudut . "<br>";
+// // Menghitung kemiringan sudut dari kemiringan garis sebelumnya
+// $kemiringanSudut = $hitungKemiringan->hitungKemiringanSudut($kemiringanGaris);
+// echo "Kemiringan Sudut: " . $kemiringanSudut . "<br>";
 
-// Menghitung kemiringan permukaan dengan perubahan ketinggian 5 dan perubahan jarak horizontal 3
-$kemiringanPermukaan = $hitungKemiringan->hitungKemiringanPermukaan(5, 3);
-echo "Kemiringan Permukaan: " . $kemiringanPermukaan . "<br>";
+// // Menghitung kemiringan permukaan dengan perubahan ketinggian 5 dan perubahan jarak horizontal 3
+// $kemiringanPermukaan = $hitungKemiringan->hitungKemiringanPermukaan(5, 3);
+// echo "Kemiringan Permukaan: " . $kemiringanPermukaan . "<br>";
 
-// Menghitung kemiringan dalam persamaan linear dengan koefisien x -2 dan koefisien y 3
-$kemiringanPersamaanLinear = $hitungKemiringan->hitungKemiringanPersamaanLinear(-2, 3);
-echo "Kemiringan dalam Persamaan Linear: " . $kemiringanPersamaanLinear . "<br>";
+// // Menghitung kemiringan dalam persamaan linear dengan koefisien x -2 dan koefisien y 3
+// $kemiringanPersamaanLinear = $hitungKemiringan->hitungKemiringanPersamaanLinear(-2, 3);
+// echo "Kemiringan dalam Persamaan Linear: " . $kemiringanPersamaanLinear . "<br>";
 
 //penggunaan class HitungGelombang
 $hitungGelombang = new HitungGelombang();
