@@ -513,8 +513,7 @@ class HitungJarak
         $dlon = deg2rad($lon2 - $lon1);
         $a = sin($dl / 2) * sin($dl / 2) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dlon / 2) * sin($dlon / 2);
         $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
-        $jarak = $r * $c;
-        return $jarak;
+        return $r * $c;
     }
 }
 
@@ -863,40 +862,34 @@ class HitungGravitasi
     public static function hukumGravitasiNewton($m1, $m2, $r)
     {
         $G = 6.67430e-11; // Konstanta Gravitasi
-        $F = $G * (($m1 * $m2) / pow($r, 2)); // Rumus Hukum Gravitasi Newton
-        return $F;
+        return $G * (($m1 * $m2) / pow($r, 2)); // Rumus Hukum Gravitasi Newton
     }
 
     // Rumus Kecepatan Melingkar di Orbit
     public static function rumusKecepatanMelingkar($M, $r)
     {
         $G = 6.67430e-11; // Konstanta Gravitasi
-        $v = sqrt(($G * $M) / $r); // Rumus Kecepatan Melingkar di Orbit
-        return $v;
+        return sqrt(($G * $M) / $r); // Rumus Kecepatan Melingkar di Orbit
     }
 
     // Hukum Kepler
     public static function hukumKepler($T, $a)
     {
-        $G = 6.67430e-11; // Konstanta Gravitasi
-        $M = (4 * pow(pi(), 2) * pow($a, 3)) / pow($T, 2); // Rumus Hukum Kepler
-        return $M;
+        return (4 * pow(pi(), 2) * pow($a, 3)) / pow($T, 2); // Rumus Hukum Kepler
     }
 
     // Rumus Energi Potensial Gravitasi
     public static function energiPotensialGravitasi($m1, $m2, $r)
     {
         $G = 6.67430e-11; // Konstanta Gravitasi
-        $U = - (($G * ($m1 * $m2)) / $r); // Rumus Energi Potensial Gravitasi
-        return $U;
+        return - (($G * ($m1 * $m2)) / $r); // Rumus Energi Potensial Gravitasi
     }
 
     // Rumus Percepatan Gravitasi
     public static function rumusPercepatanGravitasi($M, $r)
     {
         $G = 6.67430e-11; // Konstanta Gravitasi
-        $g = ($G * $M) / pow($r, 2); // Rumus Percepatan Gravitasi
-        return $g;
+        return ($G * $M) / pow($r, 2); // Rumus Percepatan Gravitasi
     }
 }
 
@@ -992,8 +985,7 @@ class HitungCuaca
     public static function hitungPersamaanGasIdeal($tekanan, $volume, $suhu)
     {
         $konstanta = 8.314; // Konstanta gas ideal
-        $n = $tekanan * $volume / ($konstanta * $suhu);
-        return $n;
+        return $tekanan * $volume / ($konstanta * $suhu);
     }
 
     // Fungsi untuk menghitung Persamaan Clausius-Clapeyron
@@ -1004,8 +996,7 @@ class HitungCuaca
         $dT = 1 / $suhu;
         $dpdT = $konstanta * $dT;
         $lnPdT = $lnP / $dT;
-        $persamaan = $dpdT * $lnPdT;
-        return $persamaan;
+        return $dpdT * $lnPdT;
     }
 
     // Fungsi untuk menghitung Persamaan Adiabatik
@@ -1021,7 +1012,7 @@ class HitungCuaca
     }
 
     // Fungsi untuk menghitung Persamaan Pemantulan Cahaya
-    public static function hitungPersamaanPemantulanCahaya($sudutDatang, $sudutPantul)
+    public static function hitungPersamaanPemantulanCahaya($sudutDatang)
     {
         return $sudutDatang; // Hukum pemantulan cahaya
     }
@@ -1056,29 +1047,25 @@ class HitungKecepatanCahaya
     public static function hitungWaktuTempuhCahaya($jarak)
     {
         $kecepatanCahaya = 299792458; // kecepatan cahaya dalam vakum (m/s)
-        $waktuTempuh = $jarak / $kecepatanCahaya;
-        return $waktuTempuh;
+        return $jarak / $kecepatanCahaya;
     }
 
     public static function hitungEnergiFoton($frekuensi)
     {
         $konstantaPlanck = 6.62607015 * pow(10, -34); // konstanta Planck (Joule second)
-        $energiFoton = $konstantaPlanck * $frekuensi;
-        return $energiFoton;
+        return $konstantaPlanck * $frekuensi;
     }
 
     public static function hitungPanjangGelombangCahaya($frekuensi)
     {
         $kecepatanCahaya = 299792458; // kecepatan cahaya dalam vakum (m/s)
-        $panjangGelombang = $kecepatanCahaya / $frekuensi;
-        return $panjangGelombang;
+        return $kecepatanCahaya / $frekuensi;
     }
 
     public static function hitungEfekDopplerCahaya($frekuensiSumber, $kecepatanPendekatan, $kecepatanPenerima)
     {
         $kecepatanCahaya = 299792458; // kecepatan cahaya dalam vakum (m/s)
-        $frekuensiTeramati = $frekuensiSumber * ($kecepatanCahaya + $kecepatanPenerima) / ($kecepatanCahaya + $kecepatanPendekatan);
-        return $frekuensiTeramati;
+        return $frekuensiSumber * ($kecepatanCahaya + $kecepatanPenerima) / ($kecepatanCahaya + $kecepatanPendekatan);
     }
 
     public static function hitungInterferensiCahaya($selisihFase)
@@ -1095,8 +1082,7 @@ class HitungKecepatanCahaya
     public static function hitungHukumSnellius($kecepatanCahaya1, $kecepatanCahaya2, $sudutIncident)
     {
         $indeksBias = $kecepatanCahaya1 / $kecepatanCahaya2;
-        $sudutBias = asin($indeksBias * sin($sudutIncident));
-        return $sudutBias;
+        return asin($indeksBias * sin($sudutIncident));
     }
 
     public static function hitungEfekFotoelektrik($energiFoton, $fungsiKerja)
@@ -1162,8 +1148,7 @@ class HitungDayaLedakNuklir
     public static function rumusEnergiNuklir($massaBom)
     {
         $kecepatanCahaya = 299792458; // kecepatan cahaya dalam vakum (m/s)
-        $energi = $massaBom * pow($kecepatanCahaya, 2);
-        return $energi;
+        return $massaBom * pow($kecepatanCahaya, 2);
     }
 
     public static function rumusEfisiensiFisi($energiFisi, $energiBahanBakar)
@@ -1193,10 +1178,7 @@ class CalculatorHitungWarisanIslami
         $bagianPerOrangTua = 1 / 6 * $totalHarta;
         $bagianPerSaudaraKandungLaki = 1 / 6 * $totalHarta;
         $bagianPerSaudaraKandungPerempuan = 1 / 6 * $totalHarta;
-
-        $warisanPerAhli = ($bagianPerSuamiIstri + $bagianPerAnakLaki + $bagianPerAnakPerempuan + $bagianPerOrangTua + $bagianPerSaudaraKandungLaki + $bagianPerSaudaraKandungPerempuan) / $jumlahAhliWaris;
-
-        return $warisanPerAhli;
+        return ($bagianPerSuamiIstri + $bagianPerAnakLaki + $bagianPerAnakPerempuan + $bagianPerOrangTua + $bagianPerSaudaraKandungLaki + $bagianPerSaudaraKandungPerempuan) / $jumlahAhliWaris;
     }
 }
 
