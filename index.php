@@ -424,18 +424,6 @@ class Aljabar
         $penyebut = $pecahanArr[1];
         return $pembilang / $penyebut;
     }
-
-    //Fungsi getOperator
-    private static function getOperator($inequality)
-    {
-        if (strpos($inequality, "<=") !== false) {
-            return "<=";
-        } elseif (strpos($inequality, ">=") !== false) {
-            return ">=";
-        } else {
-            return "";
-        }
-    }
 }
 
 class BangunRuang
