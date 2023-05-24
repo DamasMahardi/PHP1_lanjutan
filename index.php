@@ -1172,13 +1172,13 @@ class CalculatorHitungWarisanIslami
 
     public static function hitungWarisan($totalHarta, $jumlahAhliWaris)
     {
-        $bagianPerSuamiIstri = 1 / 8 * $totalHarta;
-        $bagianPerAnakLaki = 2 / 8 * $totalHarta;
-        $bagianPerAnakPerempuan = 1 / 8 * $totalHarta;
-        $bagianPerOrangTua = 1 / 6 * $totalHarta;
-        $bagianPerSaudaraKandungLaki = 1 / 6 * $totalHarta;
-        $bagianPerSaudaraKandungPerempuan = 1 / 6 * $totalHarta;
-        return ($bagianPerSuamiIstri + $bagianPerAnakLaki + $bagianPerAnakPerempuan + $bagianPerOrangTua + $bagianPerSaudaraKandungLaki + $bagianPerSaudaraKandungPerempuan) / $jumlahAhliWaris;
+        $bgsmistr = 1 / 8 * $totalHarta;
+        $bganklaki = 2 / 8 * $totalHarta;
+        $bgankprp = 1 / 8 * $totalHarta;
+        $bgortu = 1 / 6 * $totalHarta;
+        $bgsdrlki = 1 / 6 * $totalHarta;
+        $bgsprm = 1 / 6 * $totalHarta;
+        return ($bgsmistr + $bganklaki + $bgankprp + $bgortu + $bgsdrlki + $bgsprm) / $jumlahAhliWaris;
     }
 }
 
@@ -1223,7 +1223,7 @@ class CalculatorZakat
 
 class CalculatorHisabFalak
 {
-    public static function hitungWaktuHisab($tanggal, $lokasi)
+    public static function hitungWaktuHisab()
     {
         // Simulasikan perhitungan waktu hisab berdasarkan tanggal dan lokasi
 
@@ -1633,7 +1633,7 @@ echo "Frekuensi Musik: " . $frekuensiMusik . " Hz<br>";
 
 // Menghitung frekuensi gelombang elektromagnetik dengan panjang gelombang 2 meter
 $frekuensiGelombangElektromagnetik = $hitungFrekuensi->hitungFrekuensiGelombangElektromagnetik(2);
-echo "Frekuensi Gelombang Elektromagnetik: " . $frekuensiGelombangElektromagnetik . " Hz<br>";
+echo "Frekuensi Gelombang Elektromagnetik: " . $frekuensiGelombangElektromagnetik . "<br>";
 
 // Menghitung frekuensi rotasi dengan jumlah putaran 5 dan waktu 2 detik
 $frekuensiRotasi = $hitungFrekuensi->hitungFrekuensiRotasi(5, 2);
@@ -1648,7 +1648,7 @@ $hitungGetaran = new HitungGetaran();
 
 // Menghitung frekuensi dengan periode 0.5 detik
 $frekuensi = $hitungGetaran->hitungFrekuensi(0.5);
-echo "Frekuensi: " . $frekuensi . " Hz<br>";
+echo "Frekuensi: " . $frekuensi . "<br>";
 
 // Menghitung periode dengan frekuensi 100 Hz
 $periode = $hitungGetaran->hitungPeriode(100);
@@ -1706,11 +1706,11 @@ echo "Panjang Gelombang: " . $panjangGelombang . " meter<br>";
 
 // Menghitung kecepatan gelombang dengan panjang gelombang 0.8 meter dan frekuensi 220 Hz
 $kecepatanGelombang = $hitungGelombang->hitungKecepatanGelombang(0.8, 220);
-echo "Kecepatan Gelombang: " . $kecepatanGelombang . " m/s<br>";
+echo "Kecepatan Gelombang: " . $kecepatanGelombang . "<br>";
 
 // Menghitung frekuensi gelombang dengan kecepatan 300 m/s dan panjang gelombang 0.5 meter
 $frekuensiGelombang = $hitungGelombang->hitungFrekuensiGelombang(300, 0.5);
-echo "Frekuensi Gelombang: " . $frekuensiGelombang . " Hz<br>";
+echo "Frekuensi Gelombang: " . $frekuensiGelombang . "<br>";
 
 // Menghitung periode gelombang dengan frekuensi 440 Hz
 $periodeGelombang = $hitungGelombang->hitungPeriodeGelombang(440);
@@ -1718,7 +1718,7 @@ echo "Periode Gelombang: " . $periodeGelombang . " detik<br>";
 
 // Menghitung kecepatan grup dengan perubahan panjang gelombang 0.2 meter dan perubahan waktu 0.5 detik
 $kecepatanGrup = $hitungGelombang->hitungKecepatanGrup(0.2, 0.5);
-echo "Kecepatan Grup: " . $kecepatanGrup . " m/s<br>";
+echo "Kecepatan Grup: " . $kecepatanGrup . "<br>";
 
 // Menghitung amplitudo gelombang dengan data posisi partikel $y
 $y = [0.5, 1.2, 0.8, -0.3, -1.0];
@@ -1778,23 +1778,23 @@ $T = 4; // waktu puncak dalam detik
 
 // Menghitung jarak jatuh bebas
 $jarakJatuhBebas = $hitungKetinggian->jarakJatuhBebas($g, $t);
-echo "Jarak jatuh bebas: " . $jarakJatuhBebas . " meter<br>";
+echo "Jarak jatuh bebas: " . $jarakJatuhBebas . "<br>";
 
 // Menghitung ketinggian pada gerak vertikal
 $ketinggianVertikal = $hitungKetinggian->ketinggianVertikal($v0, $t, $g);
-echo "Ketinggian pada gerak vertikal: " . $ketinggianVertikal . " meter<br>";
+echo "Ketinggian pada gerak vertikal: " . $ketinggianVertikal . "<br>";
 
 // Menghitung ketinggian dalam gerak parabola
 $ketinggianParabola = $hitungKetinggian->ketinggianParabola($v0y, $t, $g);
-echo "Ketinggian dalam gerak parabola: " . $ketinggianParabola . " meter<br>";
+echo "Ketinggian dalam gerak parabola: " . $ketinggianParabola . "<br>";
 
 // Menghitung ketinggian pada gerak vertikal dengan kecepatan akhir nol
 $ketinggianVertikalAkhirNol = $hitungKetinggian->ketinggianVertikalAkhirNol($v0y, $t, $g);
-echo "Ketinggian pada gerak vertikal dengan kecepatan akhir nol: " . $ketinggianVertikalAkhirNol . " meter<br>";
+echo "Ketinggian pada gerak vertikal dengan kecepatan akhir nol: " . $ketinggianVertikalAkhirNol . "<br>";
 
 // Menghitung ketinggian pada gerak proyektil
 $ketinggianProyektil = $hitungKetinggian->ketinggianProyektil($v0y, $T, $g);
-echo "Ketinggian pada gerak proyektil: " . $ketinggianProyektil . " meter<br>";
+echo "Ketinggian pada gerak proyektil: " . $ketinggianProyektil . "<br>";
 
 //objek dari class HitungTeganganListrik
 $hitungTegangan = new HitungTeganganListrik();
@@ -1817,31 +1817,31 @@ $N2 = 5; // Nilai jumlah lilitan akhir
 
 // Menghitung tegangan listrik menggunakan rumus tegangan listrik
 $tegangan = $hitungTegangan->rumusTeganganListrik($I, $R);
-echo "Tegangan listrik: " . $tegangan . " Volt<br>";
+echo "Tegangan listrik: " . $tegangan . " Volt tegangan listrik<br>";
 
 // Menghitung tegangan listrik menggunakan rumus hukum Ohm
 $tegangan = $hitungTegangan->rumusHukumOhm($I, $R);
-echo "Tegangan listrik: " . $tegangan . " Volt<br>";
+echo "Tegangan listrik: " . $tegangan . " Volt hukum Ohm<br>";
 
 // Menghitung tegangan dalam rangkaian seri
 $teganganSeri = $hitungTegangan->rumusTeganganSeri($voltages);
-echo "Tegangan dalam rangkaian seri: " . $teganganSeri . " Volt<br>";
+echo "Tegangan dalam rangkaian seri: " . $teganganSeri . " Volt rangkaian seri<br>";
 
 // Menghitung tegangan dalam rangkaian paralel
 $teganganParalel = $hitungTegangan->rumusTeganganParalel($voltages);
-echo "Tegangan dalam rangkaian paralel: " . $teganganParalel . " Volt<br>";
+echo "Tegangan dalam rangkaian paralel: " . $teganganParalel . " Volt rangkaian paralel<br>";
 
 // Menghitung tegangan pada kapasitor
 $teganganKapasitor = $hitungTegangan->rumusTeganganKapasitor($Q, $C);
-echo "Tegangan pada kapasitor: " . $teganganKapasitor . " Volt<br>";
+echo "Tegangan pada kapasitor: " . $teganganKapasitor . " Volt kapasitor<br>";
 
 // Menghitung tegangan pada induktor
 $teganganInduktor = $hitungTegangan->rumusTeganganInduktor($L, $di_dt);
-echo "Tegangan pada induktor: " . $teganganInduktor . " Volt<br>";
+echo "Tegangan pada induktor: " . $teganganInduktor . " Volt induktor<br>";
 
 // Menghitung tegangan pada transformator
 $teganganTransformator = $hitungTegangan->rumusTeganganTransformator($V1, $N1, $N2);
-echo "Tegangan pada transformator: " . $teganganTransformator . " Volt<br>";
+echo "Tegangan pada transformator: " . $teganganTransformator . " Volt transformator<br>";
 
 //pemanggilan fungsi:
 
@@ -1908,13 +1908,13 @@ $kecepatanAliran1 = 10; // Misalnya, dalam satuan meter per detik
 $luasPenampang2 = 4; // Misalnya, dalam satuan meter persegi
 
 $kecepatanAliran2 = HitungDebitAir::hitungHukumKontinuitas($luasPenampang1, $kecepatanAliran1, $luasPenampang2);
-echo "Kecepatan Aliran 2: " . $kecepatanAliran2 . " m/s <br>";
+echo "Kecepatan Aliran 2: " . $kecepatanAliran2 . "<br>";
 
 // Memanggil fungsi hitungPersamaanTorricelli
 $tinggiJatuh = 9.81; // Misalnya, dalam satuan meter
 
 $kecepatanAliran = HitungDebitAir::hitungPersamaanTorricelli($tinggiJatuh);
-echo "Kecepatan Aliran: " . $kecepatanAliran . " m/s <br>";
+echo "Kecepatan Aliran: " . $kecepatanAliran . "<br>";
 
 // Memanggil fungsi hitungHukumDarcyWeisbach
 $koefisienGesekan = 0.02; // Misalnya, koefisien gesekan dalam pipa
@@ -1930,19 +1930,19 @@ $jariJariHidrolik = 1.5; // Misalnya, dalam satuan meter
 $kemiringan = 0.02; // Misalnya, dalam satuan meter/meter
 
 $kecepatanAliran = HitungDebitAir::hitungHukumManning($koefisienManning, $jariJariHidrolik, $kemiringan);
-echo "Kecepatan Aliran: " . $kecepatanAliran . " m/s <br>";
+echo "Kecepatan Aliran Manning: " . $kecepatanAliran . "<br>";
 
 // Memanggil fungsi hitungPersamaanChezy
 $koefisienChezy = 60; // Misalnya, koefisien Chezy
 
 $kecepatanAliran = HitungDebitAir::hitungPersamaanChezy($koefisienChezy, $jariJariHidrolik, $kemiringan);
-echo "Kecepatan Aliran: " . $kecepatanAliran . " m/s <br>";
+echo "Kecepatan Aliran PersamaanChezy: " . $kecepatanAliran . "<br>";
 
 // Memanggil fungsi hitungPersamaanManningStrickler
 $koefisienStrickler = 65; // Misalnya, koefisien Strickler
 
 $kecepatanAliran = HitungDebitAir::hitungPersamaanManningStrickler($koefisienStrickler, $jariJariHidrolik, $kemiringan);
-echo "Kecepatan Aliran: " . $kecepatanAliran . " m/s <br>";
+echo "Kecepatan Aliran PersamaanManningStrickler: " . $kecepatanAliran . "<br>";
 
 // Memanggil fungsi-fungsi dan menampilkan hasil hitungannya
 $tekanan = 2; // Misalnya, tekanan dalam Persamaan Gas Ideal
@@ -1980,9 +1980,9 @@ $tinggi = 5; // Misalnya, tinggi dalam Persamaan Aliran Fluida
 $hasilAliranFluida = HitungCuaca::hitungPersamaanAliranFluida($tekanan, $kecepatan, $tinggi);
 echo "Hasil Persamaan Aliran Fluida: " . $hasilAliranFluida . "<br>";
 
-$kecepatanPenguapan = 2; // Misalnya, kecepatan penguapan dalam Persamaan Laju Evapotranspirasi
-$kecepatanTranspirasi = 3; // Misalnya, kecepatan transpirasi dalam Persamaan Laju Evapotranspirasi
-$hasilLajuEvapotranspirasi = HitungCuaca::hitungPersamaanLajuEvapotranspirasi($kecepatanPenguapan, $kecepatanTranspirasi);
+$kcpengpn = 2; // Misalnya, kecepatan penguapan dalam Persamaan Laju Evapotranspirasi
+$kcptrs = 3; // Misalnya, kecepatan transpirasi dalam Persamaan Laju Evapotranspirasi
+$hasilevsi = HitungCuaca::hitungPersamaanLajuEvapotranspirasi($kcpengpn, $kcptrs);
 echo "Hasil Persamaan Laju Evapotranspirasi: " . $hasilLajuEvapotranspirasi . "<br>";
 
 $suhu = 25; // Misalnya, suhu dalam Persamaan Termodinamika Atmosfer
@@ -1993,7 +1993,7 @@ echo "Hasil Persamaan Termodinamika Atmosfer: " . $hasilTermodinamikaAtmosfer . 
 
 //penggunaan
 $kecepatanCahayaDalamMedium = HitungKecepatanCahaya::hitungKecepatanCahayaDalamMedium(299792458, 1.5);
-echo "Kecepatan Cahaya dalam Medium: " . $kecepatanCahayaDalamMedium . " m/s <br>";
+echo "Kecepatan Cahaya dalam Medium: " . $kecepatanCahayaDalamMedium . "<br>";
 
 $waktuTempuhCahaya = HitungKecepatanCahaya::hitungWaktuTempuhCahaya(300000000);
 echo "Waktu Tempuh Cahaya: " . $waktuTempuhCahaya . " detik <br>";
