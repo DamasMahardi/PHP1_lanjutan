@@ -495,32 +495,27 @@ class HitungJarak
 {
     public function hitungJarakAntarTitik($x1, $y1, $x2, $y2)
     {
-        $jarak = sqrt(pow($x2 - $x1, 2) + pow($y2 - $y1, 2));
-        return $jarak;
+        return sqrt(pow($x2 - $x1, 2) + pow($y2 - $y1, 2));
     }
 
     public function hitungJarakTempuh($kecepatan, $waktu)
     {
-        $jarak = $kecepatan * $waktu;
-        return $jarak;
+        return $kecepatan * $waktu;
     }
 
     public function hitungJarakSudut($sudut, $jariJari)
     {
-        $jarak = $sudut * $jariJari;
-        return $jarak;
+        return $sudut * $jariJari;
     }
 
     public function hitungJarakAntaraGaris($A, $B, $C, $x, $y)
     {
-        $jarak = abs($A * $x + $B * $y + $C) / sqrt(pow($A, 2) + pow($B, 2));
-        return $jarak;
+        return abs($A * $x + $B * $y + $C) / sqrt(pow($A, 2) + pow($B, 2));
     }
 
     public function hitungJarakManhattan($x1, $y1, $x2, $y2)
     {
-        $jarak = abs($x2 - $x1) + abs($y2 - $y1);
-        return $jarak;
+        return abs($x2 - $x1) + abs($y2 - $y1);
     }
 
     public function hitungJarakHaversine($lat1, $lon1, $lat2, $lon2)
@@ -539,38 +534,32 @@ class HitungBerat
 {
     public function hitungBeratBenda($massa, $gravitasi)
     {
-        $berat = $massa * $gravitasi;
-        return $berat;
+        return $massa * $gravitasi;
     }
 
     public function hitungBeratJenis($massaJenis, $gravitasi)
     {
-        $beratJenis = $massaJenis * $gravitasi;
-        return $beratJenis;
+        return $massaJenis * $gravitasi;
     }
 
     public function hitungBeratMolekul($massaAtom1, $jumlahAtom1, $massaAtom2, $jumlahAtom2)
     {
-        $beratMolekul = ($massaAtom1 * $jumlahAtom1) + ($massaAtom2 * $jumlahAtom2);
-        return $beratMolekul;
+        return ($massaAtom1 * $jumlahAtom1) + ($massaAtom2 * $jumlahAtom2);
     }
 
     public function hitungBeratIsotop($persentaseIsotop1, $massaIsotop1, $persentaseIsotop2, $massaIsotop2)
     {
-        $beratIsotop = ($persentaseIsotop1 * $massaIsotop1) + ($persentaseIsotop2 * $massaIsotop2);
-        return $beratIsotop;
+        return ($persentaseIsotop1 * $massaIsotop1) + ($persentaseIsotop2 * $massaIsotop2);
     }
 
     public function hitungBeratMolekulRelatif($massaAtom1, $jumlahAtom1, $massaAtom2, $jumlahAtom2)
     {
-        $beratMolekulRelatif = ($massaAtom1 * $jumlahAtom1) + ($massaAtom2 * $jumlahAtom2);
-        return $beratMolekulRelatif;
+        return ($massaAtom1 * $jumlahAtom1) + ($massaAtom2 * $jumlahAtom2);
     }
 
     public function hitungBeratBadanIdeal($berat, $tinggi)
     {
-        $beratBadanIdeal = $berat / ($tinggi * $tinggi);
-        return $beratBadanIdeal;
+        return $berat / ($tinggi * $tinggi);
     }
 }
 
@@ -578,38 +567,32 @@ class HitungFrekuensi
 {
     public function hitungFrekuensiGelombang($periode)
     {
-        $frekuensi = 1 / $periode;
-        return $frekuensi;
+        return 1 / $periode;
     }
 
     public function hitungFrekuensiSudut($frekuensi)
     {
-        $frekuensiSudut = 2 * pi() * $frekuensi;
-        return $frekuensiSudut;
+        return  2 * pi() * $frekuensi;
     }
 
     public function hitungFrekuensiMusik($oktaf, $frekuensiDasar)
     {
-        $frekuensi = $oktaf * $frekuensiDasar;
-        return $frekuensi;
+        return $oktaf * $frekuensiDasar;
     }
 
     public function hitungFrekuensiGelombangElektromagnetik($panjangGelombang)
     {
-        $frekuensi = 3 * pow(10, 8) / $panjangGelombang;
-        return $frekuensi;
+        return 3 * pow(10, 8) / $panjangGelombang;
     }
 
     public function hitungFrekuensiRotasi($jumlahPutaran, $waktu)
     {
-        $frekuensi = $jumlahPutaran / $waktu;
-        return $frekuensi;
+        return $jumlahPutaran / $waktu;
     }
 
     public function hitungFrekuensiDataStatistik($jumlahDataTertentu, $jumlahTotalData)
     {
-        $frekuensi = $jumlahDataTertentu / $jumlahTotalData;
-        return $frekuensi;
+        return $jumlahDataTertentu / $jumlahTotalData;
     }
 }
 
@@ -617,44 +600,37 @@ class HitungGetaran
 {
     public function hitungFrekuensi($periode)
     {
-        $frekuensi = 1 / $periode;
-        return $frekuensi;
+        return 1 / $periode;
     }
 
     public function hitungPeriode($frekuensi)
     {
-        $periode = 1 / $frekuensi;
-        return $periode;
+        return 1 / $frekuensi;
     }
 
     public function hitungSudutKecepatan($frekuensi)
     {
-        $sudutKecepatan = 2 * pi() * $frekuensi;
-        return $sudutKecepatan;
+        return 2 * pi() * $frekuensi;
     }
 
     public function hitungKecepatanAmplitudoMaksimum($sudutKecepatan, $amplitudo)
     {
-        $kecepatanAmplitudoMaksimum = $sudutKecepatan * $amplitudo;
-        return $kecepatanAmplitudoMaksimum;
+        return $sudutKecepatan * $amplitudo;
     }
 
     public function hitungPercepatanAmplitudoMaksimum($sudutKecepatan, $amplitudo)
     {
-        $percepatanAmplitudoMaksimum = pow($sudutKecepatan, 2) * $amplitudo;
-        return $percepatanAmplitudoMaksimum;
+        return pow($sudutKecepatan, 2) * $amplitudo;
     }
 
     public function hitungPercepatanSentripetal($sudutKecepatan, $radius)
     {
-        $percepatanSentripetal = pow($sudutKecepatan, 2) * $radius;
-        return $percepatanSentripetal;
+        return pow($sudutKecepatan, 2) * $radius;
     }
 
     public function hitungEnergiKinetikGetaran($massa, $sudutKecepatan, $amplitudo)
     {
-        $energiKinetikGetaran = 0.5 * $massa * pow($sudutKecepatan, 2) * pow($amplitudo, 2);
-        return $energiKinetikGetaran;
+        return 0.5 * $massa * pow($sudutKecepatan, 2) * pow($amplitudo, 2);
     }
 }
 
@@ -662,32 +638,27 @@ class HitungKemiringan
 {
     public function hitungKemiringanGaris($x1, $y1, $x2, $y2)
     {
-        $kemiringan = ($y2 - $y1) / ($x2 - $x1);
-        return $kemiringan;
+        return ($y2 - $y1) / ($x2 - $x1);
     }
 
     public function hitungKemiringanTangen($kemiringan)
     {
-        $kemiringanTangen = atan($kemiringan);
-        return $kemiringanTangen;
+        return atan($kemiringan);
     }
 
     public function hitungKemiringanSudut($kemiringan)
     {
-        $kemiringanSudut = asin($kemiringan / sqrt(1 + pow($kemiringan, 2)));
-        return $kemiringanSudut;
+        return asin($kemiringan / sqrt(1 + pow($kemiringan, 2)));
     }
 
     public function hitungKemiringanPermukaan($dy, $dx)
     {
-        $kemiringanPermukaan = atan($dy / $dx);
-        return $kemiringanPermukaan;
+        return atan($dy / $dx);
     }
 
     public function hitungKemiringanPersamaanLinear($a, $b)
     {
-        $kemiringanPersamaanLinear = -$a / $b;
-        return $kemiringanPersamaanLinear;
+        return -$a / $b;
     }
 }
 
@@ -695,44 +666,37 @@ class HitungGelombang
 {
     public function hitungPanjangGelombang($v, $f)
     {
-        $panjangGelombang = $v / $f;
-        return $panjangGelombang;
+        return $v / $f;
     }
 
     public function hitungKecepatanGelombang($lambda, $f)
     {
-        $kecepatanGelombang = $lambda * $f;
-        return $kecepatanGelombang;
+        return $lambda * $f;
     }
 
     public function hitungFrekuensiGelombang($v, $lambda)
     {
-        $frekuensiGelombang = $v / $lambda;
-        return $frekuensiGelombang;
+        return $v / $lambda;
     }
 
     public function hitungPeriodeGelombang($f)
     {
-        $periodeGelombang = 1 / $f;
-        return $periodeGelombang;
+        return 1 / $f;
     }
 
     public function hitungKecepatanGrup($dLambda, $dt)
     {
-        $kecepatanGrup = $dLambda / $dt;
-        return $kecepatanGrup;
+        return $dLambda / $dt;
     }
 
     public function hitungAmplitudoGelombang($y)
     {
-        $amplitudoGelombang = max($y) - min($y);
-        return $amplitudoGelombang;
+        return max($y) - min($y);
     }
 
     public function hitungPersamaanGelombang($A, $k, $x, $omega, $t)
     {
-        $persamaanGelombang = $A * sin($k * $x - $omega * $t);
-        return $persamaanGelombang;
+        return $A * sin($k * $x - $omega * $t);
     }
 }
 
@@ -830,36 +794,31 @@ class HitungKetinggian
     // Rumus Jarak Jatuh Bebas (Jatuh Gravitasi)
     public function jarakJatuhBebas($g, $t)
     {
-        $h = 0.5 * $g * $t * $t;
-        return $h;
+        return 0.5 * $g * $t * $t;
     }
 
     // Rumus Ketinggian pada Gerak Vertikal (Vertikal Up atau Vertikal Down)
     public function ketinggianVertikal($v0, $t, $g)
     {
-        $h = $v0 * $t - 0.5 * $g * $t * $t;
-        return $h;
+        return $v0 * $t - 0.5 * $g * $t * $t;
     }
 
     // Rumus Ketinggian dalam Gerak Parabola
     public function ketinggianParabola($v0y, $t, $g)
     {
-        $h = $v0y * $t - 0.5 * $g * $t * $t;
-        return $h;
+        return $v0y * $t - 0.5 * $g * $t * $t;
     }
 
     // Rumus Ketinggian pada Gerak Vertikal dengan Kecepatan Akhir Nol
     public function ketinggianVertikalAkhirNol($v0y, $t, $g)
     {
-        $h = $v0y * $t + 0.5 * $g * $t * $t;
-        return $h;
+        return $v0y * $t + 0.5 * $g * $t * $t;
     }
 
     // Rumus Ketinggian pada Gerak Proyektil
     public function ketinggianProyektil($v0y, $T, $g)
     {
-        $h = $v0y * $T - 0.5 * $g * $T * $T;
-        return $h;
+        return $v0y * $T - 0.5 * $g * $T * $T;
     }
 }
 
@@ -959,40 +918,35 @@ class HitungTsunami
     public static function persamaanGerakanTsunami($v, $h, $d)
     {
         // Rumus persamaan gerakan gelombang tsunami
-        $y = $v * sqrt($h / $d);
-        return $y;
+        return $v * sqrt($h / $d);
     }
 
     // Rumus Kecepatan Gelombang Tsunami
     public static function rumusKecepatanTsunami($g, $h)
     {
         // Rumus kecepatan gelombang tsunami
-        $v = sqrt($g * $h);
-        return $v;
+        return sqrt($g * $h);
     }
 
     // Rumus Periode Gelombang Tsunami
     public static function rumusPeriodeTsunami($g, $h)
     {
         // Rumus periode gelombang tsunami
-        $T = 2 * pi() * sqrt($h / $g);
-        return $T;
+        return 2 * pi() * sqrt($h / $g);
     }
 
     // Persamaan Energi Potensial Gelombang Tsunami
     public static function persamaanEnergiPotensialTsunami($p, $g, $h)
     {
         // Rumus persamaan energi potensial gelombang tsunami
-        $E = ($p * $g * pow($h, 2)) / 2;
-        return $E;
+        return ($p * $g * pow($h, 2)) / 2;
     }
 
     // Rumus Skala Tsunami
     public static function rumusSkalaTsunami($m, $d)
     {
         // Rumus skala tsunami
-        $h = pow(10, ($m - 7)) * $d;
-        return $h;
+        return pow(10, ($m - 7)) * $d;
     }
 }
 
@@ -1008,45 +962,39 @@ class HitungDebitAir
     // Rumus Hukum Kontinuitas: A1 × V1 = A2 × V2
     public static function hitungHukumKontinuitas($luasPenampang1, $kecepatanAliran1, $luasPenampang2)
     {
-        $kecepatanAliran2 = ($luasPenampang1 * $kecepatanAliran1) / $luasPenampang2;
-        return $kecepatanAliran2;
+        return ($luasPenampang1 * $kecepatanAliran1) / $luasPenampang2;
     }
 
     // Rumus Persamaan Torricelli: V = √(2 × g × h)
     public static function hitungPersamaanTorricelli($tinggiJatuh)
     {
         $g = 9.8; // Percepatan gravitasi
-        $kecepatanAliran = sqrt(2 * $g * $tinggiJatuh);
-        return $kecepatanAliran;
+        return sqrt(2 * $g * $tinggiJatuh);
     }
 
     // Rumus Hukum Darcy-Weisbach: Hf = (f × (L / D) × (V^2) / (2 × g))
     public static function hitungHukumDarcyWeisbach($koefisienGesekan, $panjangPipa, $diameterPipa, $kecepatanAliran)
     {
         $g = 9.8; // Percepatan gravitasi
-        $kehilanganTekanan = ($koefisienGesekan * ($panjangPipa / $diameterPipa) * pow($kecepatanAliran, 2)) / (2 * $g);
-        return $kehilanganTekanan;
+        return ($koefisienGesekan * ($panjangPipa / $diameterPipa) * pow($kecepatanAliran, 2)) / (2 * $g);
     }
 
     // Rumus Hukum Manning: V = (1 / n) × (R^2/3) × (S^1/2)
     public static function hitungHukumManning($koefisienManning, $jariJariHidrolik, $kemiringan)
     {
-        $kecepatanAliran = (1 / $koefisienManning) * pow($jariJariHidrolik, 2 / 3) * sqrt($kemiringan);
-        return $kecepatanAliran;
+        return (1 / $koefisienManning) * pow($jariJariHidrolik, 2 / 3) * sqrt($kemiringan);
     }
 
     // Rumus Persamaan Chézy: V = (C × (R^(2/3)) × (S^(1/2)))
     public static function hitungPersamaanChezy($koefisienChezy, $jariJariHidrolik, $kemiringan)
     {
-        $kecepatanAliran = $koefisienChezy * pow($jariJariHidrolik, 2 / 3) * sqrt($kemiringan);
-        return $kecepatanAliran;
+        return $koefisienChezy * pow($jariJariHidrolik, 2 / 3) * sqrt($kemiringan);
     }
 
     // Rumus Persamaan Manning-Strickler: V = (k × (R^(2/3)) × (S^(1/2)))
     public static function hitungPersamaanManningStrickler($koefisienStrickler, $jariJariHidrolik, $kemiringan)
     {
-        $kecepatanAliran = $koefisienStrickler * pow($jariJariHidrolik, 2 / 3) * sqrt($kemiringan);
-        return $kecepatanAliran;
+        return $koefisienStrickler * pow($jariJariHidrolik, 2 / 3) * sqrt($kemiringan);
     }
 }
 
@@ -1075,44 +1023,38 @@ class HitungCuaca
     // Fungsi untuk menghitung Persamaan Adiabatik
     public static function hitungPersamaanAdiabatik($tekananAwal, $volumeAwal, $tekananAkhir, $volumeAkhir)
     {
-        $persamaan = ($tekananAwal * $volumeAwal) / ($tekananAkhir * $volumeAkhir);
-        return $persamaan;
+        return ($tekananAwal * $volumeAwal) / ($tekananAkhir * $volumeAkhir);
     }
 
     // Fungsi untuk menghitung Persamaan Termal Radiasi
     public static function hitungPersamaanTermalRadiasi($intensitasRadiasi, $luasPermukaan, $emisivitas)
     {
-        $persamaan = $intensitasRadiasi * $luasPermukaan * $emisivitas;
-        return $persamaan;
+        return $intensitasRadiasi * $luasPermukaan * $emisivitas;
     }
 
     // Fungsi untuk menghitung Persamaan Pemantulan Cahaya
     public static function hitungPersamaanPemantulanCahaya($sudutDatang, $sudutPantul)
     {
-        $sudutPemantulan = $sudutDatang; // Hukum pemantulan cahaya
-        return $sudutPemantulan;
+        return $sudutDatang; // Hukum pemantulan cahaya
     }
 
 
     // Fungsi untuk menghitung Persamaan Aliran Fluida
     public static function hitungPersamaanAliranFluida($tekanan, $kecepatan, $tinggi)
     {
-        $persamaan = ($tekanan / $kecepatan) + $tinggi;
-        return $persamaan;
+        return ($tekanan / $kecepatan) + $tinggi;
     }
 
     // Fungsi untuk menghitung Persamaan Laju Evapotranspirasi
     public static function hitungPersamaanLajuEvapotranspirasi($kecepatanPenguapan, $kecepatanTranspirasi)
     {
-        $lajuEvapotranspirasi = $kecepatanPenguapan + $kecepatanTranspirasi;
-        return $lajuEvapotranspirasi;
+        return $kecepatanPenguapan + $kecepatanTranspirasi;
     }
 
     // Fungsi untuk menghitung Persamaan Termodinamika Atmosfer
     public static function hitungPersamaanTermodinamikaAtmosfer($suhu, $tekanan, $kelembaban)
     {
-        $persamaan = ($suhu * $tekanan) / $kelembaban;
-        return $persamaan;
+        return ($suhu * $tekanan) / $kelembaban;
     }
 }
 
@@ -1120,8 +1062,7 @@ class HitungKecepatanCahaya
 {
     public static function hitungKecepatanCahayaDalamMedium($kecepatanCahaya, $indeksBias)
     {
-        $kecepatanDalamMedium = $kecepatanCahaya / $indeksBias;
-        return $kecepatanDalamMedium;
+        return $kecepatanCahaya / $indeksBias;
     }
 
     public static function hitungWaktuTempuhCahaya($jarak)
@@ -1154,8 +1095,7 @@ class HitungKecepatanCahaya
 
     public static function hitungInterferensiCahaya($selisihFase)
     {
-        $amplitudoInterferensi = 2 * cos($selisihFase / 2);
-        return $amplitudoInterferensi;
+        return 2 * cos($selisihFase / 2);
     }
 
     public static function hitungPolaritasCahayaTerpolarisasi($sudutPolarisasi, $amplitudoAwal)
@@ -1173,8 +1113,7 @@ class HitungKecepatanCahaya
 
     public static function hitungEfekFotoelektrik($energiFoton, $fungsiKerja)
     {
-        $energiKinetikElektron = $energiFoton - $fungsiKerja;
-        return $energiKinetikElektron;
+        return $energiFoton - $fungsiKerja;
     }
 }
 
@@ -1184,57 +1123,49 @@ class Kimia
     public static function rumusStoikiometri($massaReaktan, $massaProduk)
     {
         // Proses perhitungan rumus stoikiometri
-        $hasil = $massaProduk - $massaReaktan;
-        return $hasil;
+        return $massaProduk - $massaReaktan;
     }
 
     public static function rumusKonsentrasi($massaZat, $massaTotal)
     {
         // Proses perhitungan rumus konsentrasi
-        $hasil = ($massaZat / $massaTotal) * 100;
-        return $hasil;
+        return ($massaZat / $massaTotal) * 100;
     }
 
     public static function rumusLajuReaksi($konsentrasiReaktan1, $konsentrasiReaktan2, $x, $y)
     {
         // Proses perhitungan rumus laju reaksi
-        $hasil = $konsentrasiReaktan1 ** $x * $konsentrasiReaktan2 ** $y;
-        return $hasil;
+        return $konsentrasiReaktan1 ** $x * $konsentrasiReaktan2 ** $y;
     }
 
     public static function rumusTermokimia($perubahanEntalpi1, $perubahanEntalpi2)
     {
         // Proses perhitungan rumus termokimia
-        $hasil = $perubahanEntalpi1 + $perubahanEntalpi2;
-        return $hasil;
+        return $perubahanEntalpi1 + $perubahanEntalpi2;
     }
 
     public static function rumusEquilibriumKimia($konsentrasiProduk, $konsentrasiReaktan)
     {
         // Proses perhitungan rumus equilibrium kimia
-        $hasil = $konsentrasiProduk / $konsentrasiReaktan;
-        return $hasil;
+        return $konsentrasiProduk / $konsentrasiReaktan;
     }
 
     public static function rumusPH($konsentrasiHidrogen)
     {
         // Proses perhitungan rumus pH
-        $hasil = -log10($konsentrasiHidrogen);
-        return $hasil;
+        return -log10($konsentrasiHidrogen);
     }
 
     public static function rumusTermodinamika($tekanan, $volume, $jumlahMol, $konstantaGas, $suhu)
     {
         // Proses perhitungan rumus termodinamika
-        $hasil = $tekanan * $volume / ($jumlahMol * $konstantaGas * $suhu);
-        return $hasil;
+        return $tekanan * $volume / ($jumlahMol * $konstantaGas * $suhu);
     }
 
     public static function rumusElektrokimia($jumlahMuatan, $massaZatTerlarut)
     {
         // Proses perhitungan rumus elektrokimia
-        $hasil = $jumlahMuatan / $massaZatTerlarut;
-        return $hasil;
+        return $jumlahMuatan / $massaZatTerlarut;
     }
 }
 
@@ -1249,20 +1180,17 @@ class HitungDayaLedakNuklir
 
     public static function rumusEfisiensiFisi($energiFisi, $energiBahanBakar)
     {
-        $efisiensi = ($energiFisi / $energiBahanBakar) * 100;
-        return $efisiensi;
+        return ($energiFisi / $energiBahanBakar) * 100;
     }
 
     public static function rumusLajuPeluruhanRadioaktif($jumlahAtomAwal, $konstantaPeluruhan, $waktu)
     {
-        $jumlahAtomTersisa = $jumlahAtomAwal * exp(-$konstantaPeluruhan * $waktu);
-        return $jumlahAtomTersisa;
+        return $jumlahAtomAwal * exp(-$konstantaPeluruhan * $waktu);
     }
 
     public static function rumusPemantulanGelombang($sudutDatang)
     {
-        $sudutPantul = $sudutDatang;
-        return $sudutPantul;
+        return $sudutDatang;
     }
 }
 
