@@ -496,9 +496,9 @@ class HitungJarak
         return $sudut * $jariJari;
     }
 
-    public function hitungJarakAntaraGaris($a, $b, $C, $x, $y)
+    public function hitungJarakAntaraGaris($a, $b, $c, $x, $y)
     {
-        return abs($a * $x + $b * $y + $C) / sqrt(pow($a, 2) + pow($b, 2));
+        return abs($a * $x + $b * $y + $c) / sqrt(pow($a, 2) + pow($b, 2));
     }
 
     public function hitungJarakManhattan($x1, $y1, $x2, $y2)
@@ -681,9 +681,9 @@ class HitungGelombang
         return max($y) - min($y);
     }
 
-    public function hitungPersamaanGelombang($A, $k, $x, $omega, $t)
+    public function hitungPersamaanGelombang($a, $k, $x, $omega, $t)
     {
-        return $A * sin($k * $x - $omega * $t);
+        return $a * sin($k * $x - $omega * $t);
     }
 }
 
@@ -844,9 +844,9 @@ class HitungTeganganListrik
         return $q / $c;
     }
 
-    public function rumusTeganganInduktor($l, $di_dt)
+    public function rumusTeganganInduktor($l, $dt)
     {
-        return $l * $di_dt;
+        return $l * $dt;
     }
 
     public function rumusTeganganTransformator($v1, $n1, $n2)
@@ -873,9 +873,9 @@ class HitungGravitasi
     }
 
     // Hukum Kepler
-    public static function hukumKepler($T, $a)
+    public static function hukumKepler($t, $a)
     {
-        return (4 * pow(pi(), 2) * pow($a, 3)) / pow($T, 2); // Rumus Hukum Kepler
+        return (4 * pow(pi(), 2) * pow($a, 3)) / pow($t, 2); // Rumus Hukum Kepler
     }
 
     // Rumus Energi Potensial Gravitasi
@@ -934,10 +934,18 @@ class HitungTsunami
 class HitungDebitAir
 {
 
-    // Rumus Debit Air: Debit = Luas Penampang × Kecepatan Aliran
-    public static function hitungDebitAir($luasPenampang, $kecepatanAliran)
+    private $luasPenampang;
+    private $kecepatanAliran;
+    
+    public function __construct($luasPenampang, $kecepatanAliran)
     {
-        return $luasPenampang * $kecepatanAliran;
+        $this->luasPenampang = $luasPenampang;
+        $this->kecepatanAliran = $kecepatanAliran;
+    }
+
+    public function hitungDebitAir()
+    {
+        return $this->luasPenampang * $this->kecepatanAliran;
     }
 
     // Rumus Hukum Kontinuitas: A1 × V1 = A2 × V2
