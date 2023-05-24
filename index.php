@@ -934,20 +934,6 @@ class HitungTsunami
 class HitungDebitAir
 {
 
-    private $luasPenampang;
-    private $kecepatanAliran;
-    
-    public function __construct($luasPenampang, $kecepatanAliran)
-    {
-        $this->luasPenampang = $luasPenampang;
-        $this->kecepatanAliran = $kecepatanAliran;
-    }
-
-    public function hitungDebitAir()
-    {
-        return $this->luasPenampang * $this->kecepatanAliran;
-    }
-
     // Rumus Hukum Kontinuitas: A1 × V1 = A2 × V2
     public static function hitungHukumKontinuitas($luasPenampang1, $kecepatanAliran1, $luasPenampang2)
     {
@@ -1189,44 +1175,6 @@ class CalculatorHitungWarisanIslami
     }
 }
 
-class CalculatorZakat
-{
-    public static function hitungZakatEmas($jumlahEmas)
-    {
-        $nisabEmas = 85; // Nisab emas dalam gram
-
-        if ($jumlahEmas >= $nisabEmas) {
-            $zakatEmas = 0.025 * $jumlahEmas;
-            return $zakatEmas;
-        } else {
-            return 0;
-        }
-    }
-
-    public static function hitungZakatPerak($jumlahPerak)
-    {
-        $nisabPerak = 595; // Nisab perak dalam gram
-
-        if ($jumlahPerak >= $nisabPerak) {
-            $zakatPerak = 0.025 * $jumlahPerak;
-            return $zakatPerak;
-        } else {
-            return 0;
-        }
-    }
-
-    public static function hitungZakatPertanian($hasilPanen)
-    {
-        $nisabPertanian = 653; // Nisab pertanian dalam kg
-
-        if ($hasilPanen >= $nisabPertanian) {
-            $zakatPertanian = 0.1 * $hasilPanen;
-            return $zakatPertanian;
-        } else {
-            return 0;
-        }
-    }
-}
 
 class CalculatorHisabFalak
 {
@@ -1905,32 +1853,6 @@ echo "Skala Tsunami: " . $h . " meter\n <br>";
 $luasPenampang = 10; // Misalnya, dalam satuan meter persegi
 $kecepatanAliran = 5; // Misalnya, dalam satuan meter per detik
 
-// Memanggil fungsi hitungDebitAir
-$debit = HitungDebitAir::hitungDebitAir($luasPenampang, $kecepatanAliran);
-echo "Debit Air: " . $debit . " m³/s <br>";
-
-// Memanggil fungsi hitungHukumKontinuitas
-$luasPenampang1 = 8; // Misalnya, dalam satuan meter persegi
-$kecepatanAliran1 = 10; // Misalnya, dalam satuan meter per detik
-$luasPenampang2 = 4; // Misalnya, dalam satuan meter persegi
-
-$kecepatanAliran2 = HitungDebitAir::hitungHukumKontinuitas($luasPenampang1, $kecepatanAliran1, $luasPenampang2);
-echo "Kecepatan Aliran 2: " . $kecepatanAliran2 . "<br>";
-
-// Memanggil fungsi hitungPersamaanTorricelli
-$tinggiJatuh = 9.81; // Misalnya, dalam satuan meter
-
-$kcpAlr = HitungDebitAir::hitungPersamaanTorricelli($tinggiJatuh);
-echo "Kecepatan Aliran: " . $kecepatanAliran . "<br>";
-
-// Memanggil fungsi hitungHukumDarcyWeisbach
-$koef = 0.02; // Misalnya, koefisien gesekan dalam pipa
-$pPipa = 100; // Misalnya, dalam satuan meter
-$dPipa = 0.5; // Misalnya, dalam satuan meter
-
-$losTkn = HitungDebitAir::hitungHukumDarcyWeisbach($koef, $pPipa, $dPipa, $kcpAlr);
-echo "Kehilangan Tekanan: " . $losTkn . " m <br>";
-
 // Memanggil fungsi hitungHukumManning
 $koefisienManning = 0.035; // Misalnya, koefisien Manning
 $jariJariHidrolik = 1.5; // Misalnya, dalam satuan meter
@@ -2100,14 +2022,6 @@ echo "Warisan per Ahli Waris: Rp" . number_format($warisanPerAhli, 2);
 $jumlahEmas = 100; // Misalnya, jumlah emas dalam gram
 $jumlahPerak = 500; // Misalnya, jumlah perak dalam gram
 $hasilPanen = 1000; // Misalnya, hasil panen dalam kg
-
-$zakatEmas = CalculatorZakat::hitungZakatEmas($jumlahEmas);
-$zakatPerak = CalculatorZakat::hitungZakatPerak($jumlahPerak);
-$zakatPertanian = CalculatorZakat::hitungZakatPertanian($hasilPanen);
-
-echo "Zakat Emas: " . $zakatEmas . " gram <br>";
-echo "Zakat Perak: " . $zakatPerak . " gram <br>";
-echo "Zakat Pertanian: " . $zakatPertanian . " kg <br>";
 
 $tanggal = "2023-05-18"; // Misalnya, tanggal yang diinginkan
 $lokasi = "Mekah"; // Misalnya, nama lokasi yang diinginkan
