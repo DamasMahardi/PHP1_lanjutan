@@ -496,9 +496,9 @@ class HitungJarak
         return $sudut * $jariJari;
     }
 
-    public function hitungJarakAntaraGaris($A, $B, $C, $x, $y)
+    public function hitungJarakAntaraGaris($a, $b, $C, $x, $y)
     {
-        return abs($A * $x + $B * $y + $C) / sqrt(pow($A, 2) + pow($B, 2));
+        return abs($a * $x + $b * $y + $C) / sqrt(pow($a, 2) + pow($b, 2));
     }
 
     public function hitungJarakManhattan($x1, $y1, $x2, $y2)
@@ -742,17 +742,17 @@ class HitungFrekuensiSuhu
     }
 
     // Perubahan suhu
-    public function Celcius($celcius1, $celcius2)
+    public function celcius($celcius1, $celcius2)
     {
         return $celcius2 - $celcius1;
     }
 
-    public function Fahrenheit($fahrenheit1, $fahrenheit2)
+    public function fahrenheit($fahrenheit1, $fahrenheit2)
     {
         return $fahrenheit2 - $fahrenheit1;
     }
 
-    public function Kelvin($kelvin1, $kelvin2)
+    public function kelvin($kelvin1, $kelvin2)
     {
         return $kelvin2 - $kelvin1;
     }
@@ -803,22 +803,22 @@ class HitungKetinggian
     }
 
     // Rumus Ketinggian pada Gerak Proyektil
-    public function ketinggianProyektil($v0y, $T, $g)
+    public function ketinggianProyektil($v0y, $t, $g)
     {
-        return $v0y * $T - 0.5 * $g * $T * $T;
+        return $v0y * $t - 0.5 * $g * $t * $t;
     }
 }
 
 class HitungTeganganListrik
 {
-    public function rumusTeganganListrik($I, $R)
+    public function rumusTeganganListrik($i, $r)
     {
-        return $I * $R;
+        return $i * $r;
     }
 
-    public function rumusHukumOhm($I, $R)
+    public function rumusHukumOhm($i, $r)
     {
-        return $I * $R;
+        return $i * $r;
     }
 
     public function rumusTeganganSeri($voltages)
@@ -839,19 +839,19 @@ class HitungTeganganListrik
         return 1 / $inverseTotalVoltage;
     }
 
-    public function rumusTeganganKapasitor($Q, $C)
+    public function rumusTeganganKapasitor($q, $c)
     {
-        return $Q / $C;
+        return $q / $c;
     }
 
-    public function rumusTeganganInduktor($L, $di_dt)
+    public function rumusTeganganInduktor($l, $di_dt)
     {
-        return $L * $di_dt;
+        return $l * $di_dt;
     }
 
-    public function rumusTeganganTransformator($V1, $N1, $N2)
+    public function rumusTeganganTransformator($v1, $n1, $n2)
     {
-        return ($V1 * $N2) / $N1;
+        return ($v1 * $n2) / $n1;
     }
 }
 
@@ -861,15 +861,15 @@ class HitungGravitasi
     // Hukum Gravitasi Newton
     public static function hukumGravitasiNewton($m1, $m2, $r)
     {
-        $G = 6.67430e-11; // Konstanta Gravitasi
-        return $G * (($m1 * $m2) / pow($r, 2)); // Rumus Hukum Gravitasi Newton
+        $g = 6.67430e-11; // Konstanta Gravitasi
+        return $g * (($m1 * $m2) / pow($r, 2)); // Rumus Hukum Gravitasi Newton
     }
 
     // Rumus Kecepatan Melingkar di Orbit
-    public static function rumusKecepatanMelingkar($M, $r)
+    public static function rumusKecepatanMelingkar($m, $r)
     {
-        $G = 6.67430e-11; // Konstanta Gravitasi
-        return sqrt(($G * $M) / $r); // Rumus Kecepatan Melingkar di Orbit
+        $g = 6.67430e-11; // Konstanta Gravitasi
+        return sqrt(($g * $m) / $r); // Rumus Kecepatan Melingkar di Orbit
     }
 
     // Hukum Kepler
@@ -881,15 +881,15 @@ class HitungGravitasi
     // Rumus Energi Potensial Gravitasi
     public static function energiPotensialGravitasi($m1, $m2, $r)
     {
-        $G = 6.67430e-11; // Konstanta Gravitasi
-        return - (($G * ($m1 * $m2)) / $r); // Rumus Energi Potensial Gravitasi
+        $g = 6.67430e-11; // Konstanta Gravitasi
+        return - (($g * ($m1 * $m2)) / $r); // Rumus Energi Potensial Gravitasi
     }
 
     // Rumus Percepatan Gravitasi
-    public static function rumusPercepatanGravitasi($M, $r)
+    public static function rumusPercepatanGravitasi($m, $r)
     {
-        $G = 6.67430e-11; // Konstanta Gravitasi
-        return ($G * $M) / pow($r, 2); // Rumus Percepatan Gravitasi
+        $g = 6.67430e-11; // Konstanta Gravitasi
+        return ($g * $m) / pow($r, 2); // Rumus Percepatan Gravitasi
     }
 }
 
@@ -1075,8 +1075,7 @@ class HitungKecepatanCahaya
 
     public static function hitungPolaritasCahayaTerpolarisasi($sudutPolarisasi, $amplitudoAwal)
     {
-        $amplitudoTerpolarisasi = $amplitudoAwal * cos($sudutPolarisasi);
-        return $amplitudoTerpolarisasi;
+        return $amplitudoAwal * cos($sudutPolarisasi);
     }
 
     public static function hitungHukumSnellius($kecepatanCahaya1, $kecepatanCahaya2, $sudutIncident)
