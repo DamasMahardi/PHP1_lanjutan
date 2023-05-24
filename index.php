@@ -690,7 +690,7 @@ class HitungGelombang
 class HitungFrekuensiSuhu
 {
     // Konversi antara skala suhu
-    public function konversiCelciusToFahrenheit($celsius)
+    public function cToFahrenheit($celsius)
     {
         return ($celsius * 9 / 5) + 32;
     }
@@ -742,17 +742,17 @@ class HitungFrekuensiSuhu
     }
 
     // Perubahan suhu
-    public function perubahanCelcius($celcius1, $celcius2)
+    public function Celcius($celcius1, $celcius2)
     {
         return $celcius2 - $celcius1;
     }
 
-    public function perubahanFahrenheit($fahrenheit1, $fahrenheit2)
+    public function Fahrenheit($fahrenheit1, $fahrenheit2)
     {
         return $fahrenheit2 - $fahrenheit1;
     }
 
-    public function perubahanKelvin($kelvin1, $kelvin2)
+    public function Kelvin($kelvin1, $kelvin2)
     {
         return $kelvin2 - $kelvin1;
     }
@@ -1734,13 +1734,13 @@ $hitungFrekuensi = new HitungFrekuensiSuhu();
 
 // Konversi suhu dari Celcius ke Fahrenheit
 $celsius = 25;
-$fahrenheit = $hitungFrekuensi->konversiCelciusToFahrenheit($celsius);
+$fahrenheit = $hitungFrekuensi->cToFahrenheit($celsius);
 echo "Hasil konversi Celcius ke Fahrenheit: " . $fahrenheit . " °F<br>";
 
 // Perubahan suhu dari Celcius ke Fahrenheit
 $c1 = 20;
 $c2 = 35;
-$prbfh = $hitungFrekuensi->perubahanFahrenheit($hitungFrekuensi->konversiCelciusToFahrenheit($c1), $hitungFrekuensi->konversiCelciusToFahrenheit($c1));
+$prbfh = $hitungFrekuensi->Fahrenheit($hitungFrekuensi->cToFahrenheit($c1), $hitungFrekuensi->cToFahrenheit($c1));
 echo "Perubahan suhu dalam Fahrenheit: " . $prbfh . " °F<br>";
 
 // Hitung persamaan Ideal Gas
@@ -1983,7 +1983,7 @@ echo "Hasil Persamaan Aliran Fluida: " . $hasilAliranFluida . "<br>";
 $kcpengpn = 2; // Misalnya, kecepatan penguapan dalam Persamaan Laju Evapotranspirasi
 $kcptrs = 3; // Misalnya, kecepatan transpirasi dalam Persamaan Laju Evapotranspirasi
 $hasilevsi = HitungCuaca::hitungPersamaanLajuEvapotranspirasi($kcpengpn, $kcptrs);
-echo "Hasil Persamaan Laju Evapotranspirasi: " . $hasilLajuEvapotranspirasi . "<br>";
+echo "Hasil Persamaan Laju Evapotranspirasi: " . $hasilevsi . "<br>";
 
 $suhu = 25; // Misalnya, suhu dalam Persamaan Termodinamika Atmosfer
 $tekanan = 100; // Misalnya, tekanan dalam Persamaan Termodinamika Atmosfer
