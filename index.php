@@ -509,9 +509,9 @@ class HitungJarak
     public function hitungJarakHaversine($lat1, $lon1, $lat2, $lon2)
     {
         $r = 6371; // Jari-jari rata-rata Bumi dalam kilometer
-        $dlat = deg2rad($lat2 - $lat1);
+        $dl = deg2rad($lat2 - $lat1);
         $dlon = deg2rad($lon2 - $lon1);
-        $a = sin($dlat / 2) * sin($dlat / 2) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dlon / 2) * sin($dlon / 2);
+        $a = sin($dl / 2) * sin($dl / 2) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dlon / 2) * sin($dlon / 2);
         $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
         $jarak = $r * $c;
         return $jarak;
@@ -759,9 +759,9 @@ class HitungFrekuensiSuhu
     }
 
     // Persamaan suhu
-    public function persamaanIdealGas($pressure, $volume, $n, $R, $temperature)
+    public function persamaanIdealGas($pressure, $volume, $n, $r, $temperature)
     {
-        return $pressure * $volume / ($n * $R * $temperature);
+        return $pressure * $volume / ($n * $r * $temperature);
     }
 
     // Konduksi Panas
