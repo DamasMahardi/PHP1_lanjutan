@@ -1240,7 +1240,7 @@ class CalculatorHisabFalak
         ];
     }
 
-    public static function hitungWaktuFalak($tanggal, $lokasi)
+    public static function hitungWaktuFalak()
     {
         // Simulasikan perhitungan waktu falak berdasarkan tanggal dan lokasi
 
@@ -1629,7 +1629,7 @@ echo "Frekuensi Sudut: " . $frekuensiSudut . " rad/s<br>";
 
 // Menghitung frekuensi musik dengan oktaf 3 dan frekuensi dasar 440 Hz
 $frekuensiMusik = $hitungFrekuensi->hitungFrekuensiMusik(3, 440);
-echo "Frekuensi Musik: " . $frekuensiMusik . " Hz<br>";
+echo "Frekuensi Musik: " . $frekuensiMusik . " Hz Musik<br>";
 
 // Menghitung frekuensi gelombang elektromagnetik dengan panjang gelombang 2 meter
 $frekuensiGelombangElektromagnetik = $hitungFrekuensi->hitungFrekuensiGelombangElektromagnetik(2);
@@ -1637,7 +1637,7 @@ echo "Frekuensi Gelombang Elektromagnetik: " . $frekuensiGelombangElektromagneti
 
 // Menghitung frekuensi rotasi dengan jumlah putaran 5 dan waktu 2 detik
 $frekuensiRotasi = $hitungFrekuensi->hitungFrekuensiRotasi(5, 2);
-echo "Frekuensi Rotasi: " . $frekuensiRotasi . " Hz<br>";
+echo "Frekuensi Rotasi: " . $frekuensiRotasi . " Hz Rotasi<br>";
 
 // Menghitung frekuensi data dalam statistik dengan jumlah data tertentu 20 dan jumlah total data 100
 $frekuensiDataStatistik = $hitungFrekuensi->hitungFrekuensiDataStatistik(20, 100);
@@ -1725,7 +1725,7 @@ $y = [0.5, 1.2, 0.8, -0.3, -1.0];
 $amplitudoGelombang = $hitungGelombang->hitungAmplitudoGelombang($y);
 echo "Amplitudo Gelombang: " . $amplitudoGelombang . "<br>";
 
-// Menghitung persamaan gelombang dengan amplitudo 2, bilangan gelombang 0.6, posisi 0.4, frekuensi sudut 2π, dan waktu 1.5 detik
+// Menghitung persamaan gelombang dengan amplitudo 2
 $persamaanGelombang = $hitungGelombang->hitungPersamaanGelombang(2, 0.6, 0.4, 2 * M_PI, 1.5);
 echo "Persamaan Gelombang: " . $persamaanGelombang;
 
@@ -1738,10 +1738,10 @@ $fahrenheit = $hitungFrekuensi->konversiCelciusToFahrenheit($celsius);
 echo "Hasil konversi Celcius ke Fahrenheit: " . $fahrenheit . " °F<br>";
 
 // Perubahan suhu dari Celcius ke Fahrenheit
-$celsius1 = 20;
-$celsius2 = 35;
-$perubahanFahrenheit = $hitungFrekuensi->perubahanFahrenheit($hitungFrekuensi->konversiCelciusToFahrenheit($celsius1), $hitungFrekuensi->konversiCelciusToFahrenheit($celsius2));
-echo "Perubahan suhu dalam Fahrenheit: " . $perubahanFahrenheit . " °F<br>";
+$c1 = 20;
+$c2 = 35;
+$prbfh = $hitungFrekuensi->perubahanFahrenheit($hitungFrekuensi->konversiCelciusToFahrenheit($c1), $hitungFrekuensi->konversiCelciusToFahrenheit($c1));
+echo "Perubahan suhu dalam Fahrenheit: " . $prbfh . " °F<br>";
 
 // Hitung persamaan Ideal Gas
 $pressure = 1; // tekanan dalam satuan tertentu
@@ -1913,16 +1913,16 @@ echo "Kecepatan Aliran 2: " . $kecepatanAliran2 . "<br>";
 // Memanggil fungsi hitungPersamaanTorricelli
 $tinggiJatuh = 9.81; // Misalnya, dalam satuan meter
 
-$kecepatanAliran = HitungDebitAir::hitungPersamaanTorricelli($tinggiJatuh);
+$kcpAlr = HitungDebitAir::hitungPersamaanTorricelli($tinggiJatuh);
 echo "Kecepatan Aliran: " . $kecepatanAliran . "<br>";
 
 // Memanggil fungsi hitungHukumDarcyWeisbach
-$koefisienGesekan = 0.02; // Misalnya, koefisien gesekan dalam pipa
-$panjangPipa = 100; // Misalnya, dalam satuan meter
-$diameterPipa = 0.5; // Misalnya, dalam satuan meter
+$koef = 0.02; // Misalnya, koefisien gesekan dalam pipa
+$pPipa = 100; // Misalnya, dalam satuan meter
+$dPipa = 0.5; // Misalnya, dalam satuan meter
 
-$kehilanganTekanan = HitungDebitAir::hitungHukumDarcyWeisbach($koefisienGesekan, $panjangPipa, $diameterPipa, $kecepatanAliran);
-echo "Kehilangan Tekanan: " . $kehilanganTekanan . " m <br>";
+$losTkn = HitungDebitAir::hitungHukumDarcyWeisbach($koef, $pPipa, $dPipa, $kcpAlr);
+echo "Kehilangan Tekanan: " . $losTkn . " m <br>";
 
 // Memanggil fungsi hitungHukumManning
 $koefisienManning = 0.035; // Misalnya, koefisien Manning
