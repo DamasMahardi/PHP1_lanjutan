@@ -411,8 +411,6 @@ class Aljabar
                 }
             }
         }
-
-        // Mengembalikan hasil suku-suku yang digabungkan
         return $hasil;
     }
 
