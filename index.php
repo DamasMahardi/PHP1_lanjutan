@@ -1211,7 +1211,7 @@ class CalculatorHisabFalak
     }
 }
 
-echo " Aplikasi Kalkulator, Fisika, kima dan islami <br>";
+echo " New Aplikasi Kalkulator, Fisika, kima dan islami <br>";
 echo "<br>";
 // penggunaan kalkulator
 $kalkulator = new Kalkulator();
