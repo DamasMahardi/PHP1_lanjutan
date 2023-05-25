@@ -1225,228 +1225,228 @@ echo "Hasil perhitungan: " . $kalkulator->getHasil() . "<br>";
 $angka = 25;
 $persentase = 20;
 $hasilPersentase = $kalkulator->persentase($angka, $persentase);
-echo "Persentase dari $angka% dengan $persentase% adalah: " . $hasilPersentase . "<br>";
+echo "Persentase dari $angka% dengan $persentase% : " . $hasilPersentase . "<br>";
 
 $angka = 16;
 $hasilAkarKuadrat = $kalkulator->akarKuadrat($angka);
-echo "Akar kuadrat dari $angka adalah: " . $hasilAkarKuadrat . "<br>";
+echo "Akar kuadrat dari $angka : " . $hasilAkarKuadrat . "<br>";
 
 $angka = 10;
 $basis = 2;
 $hasilFungsiLogaritma = FungsiLogaritma::logaritma($angka, $basis);
-echo "FungsiLogaritma basis $basis dari $angka adalah: " . $hasilFungsiLogaritma . "<br>";
+echo "FungsiLogaritma basis $basis dari $angka : " . $hasilFungsiLogaritma . "<br>";
 
 $derajat = 45;
 $hasilRadian = FungsiLogaritma::radian($derajat);
-echo "Nilai $derajat derajat dalam radian adalah: " . $hasilRadian . "<br>";
+echo "Nilai $derajat derajat dalam radian : " . $hasilRadian . "<br>";
 
 $derajat = 30;
 $hasilSinus = FungsiLogaritma::sinus($derajat);
-echo "Sinus dari $derajat derajat adalah: " . $hasilSinus . "<br>";
+echo "Sinus dari $derajat derajat : " . $hasilSinus . "<br>";
 
 $derajat = 60;
 $hasilKosinus = FungsiLogaritma::kosinus($derajat);
-echo "Kosinus dari $derajat derajat adalah: " . $hasilKosinus . "<br>";
+echo "Kosinus dari $derajat derajat : " . $hasilKosinus . "<br>";
 
 $derajat = 45;
 $hasilTangen = FungsiLogaritma::tangen($derajat);
-echo "Tangen dari $derajat derajat adalah: " . $hasilTangen . "<br>";
+echo "Tangen dari $derajat derajat : " . $hasilTangen . "<br>";
 
 $panjang = 5;
 $lebar = 3;
 $luasPersegiPanjang = Bangundatar::hitungLuasPersegiPanjang($panjang, $lebar);
-echo "Luas persegi panjang dengan panjang $panjang dan lebar $lebar adalah: " . $luasPersegiPanjang . "<br>";
+echo "Luas persegi panjang dengan panjang $panjang dan lebar $lebar : " . $luasPersegiPanjang . "<br>";
 
 $jariJari = 4;
 $luasLingkaran = Bangundatar::hitungLuasLingkaran($jariJari);
-echo "Luas lingkaran dengan jari-jari $jariJari adalah: " . $luasLingkaran . "<br>";
+echo "Luas lingkaran dengan jari-jari $jariJari : " . $luasLingkaran . "<br>";
 
 $alas = 6;
 $tinggi = 8;
 $luasSegitiga = Bangundatar::hitungLuasSegitiga($alas, $tinggi);
-echo "Luas segitiga dengan alas $alas dan tinggi $tinggi adalah: " . $luasSegitiga . "<br>";
+echo "Luas segitiga dengan alas $alas dan tinggi $tinggi : " . $luasSegitiga . "<br>";
 
 $a = 3;
 $b = 4;
 $c = 5;
 $panjangSegitiga = Bangundatar::hitungPanjangSegitiga($a, $b, $c);
-echo "Panjang segitiga dengan sisi $a, $b, dan $c adalah: " . $panjangSegitiga . "<br>";
+echo "Panjang segitiga dengan sisi $a, $b, dan $c : " . $panjangSegitiga . "<br>";
 
 $celcius = 30;
 $hasilKonversi = Bangundatar::konversiCelciusKeFahrenheit($celcius);
-echo "Konversi suhu $celcius derajat Celcius ke Fahrenheit adalah: " . $hasilKonversi . "<br>";
+echo "Konversi suhu $celcius derajat Celcius ke Fahrenheit : " . $hasilKonversi . "<br>";
 
 $fahrenheit = 86;
 $hasilKonversi = JarakAndSuhu::konversiFahrenheitKeCelcius($fahrenheit);
-echo "Konversi suhu $fahrenheit derajat Fahrenheit ke Celcius adalah: " . $hasilKonversi . "<br>";
+echo "Konversi suhu $fahrenheit derajat Fahrenheit ke Celcius : " . $hasilKonversi . "<br>";
 
 $sisi = 5;
 $volumeKubus = Bangundatar::hitungVolumeKubus($sisi);
-echo "Volume kubus dengan sisi $sisi adalah: " . $volumeKubus . "<br>";
+echo "Volume kubus dengan sisi $sisi : " . $volumeKubus . "<br>";
 
 $jariJari = 3;
 $tinggi = 8;
 $volumeTabung = Bangundatar::hitungVolumeTabung($jariJari, $tinggi);
-echo "Volume tabung dengan jari-jari $jariJari dan tinggi $tinggi adalah: " . $volumeTabung . "<br>";
+echo "Volume tabung dengan jari-jari $jariJari dan tinggi $tinggi : " . $volumeTabung . "<br>";
 
 $massa = 120;
 $volume = 30;
 $massaJenis = Bangundatar::hitungMassaJenis($massa, $volume);
-echo "Massa jenis dengan massa $massa kg dan volume $volume m^3 adalah: " . $massaJenis . "<br>";
+echo "Massa jenis dengan massa $massa kg dan volume $volume m^3 : " . $massaJenis . "<br>";
 
 $jarak = 120;
 $waktu = 2;
 $kecepatan = JarakAndSuhu::hitungKecepatan($jarak, $waktu);
-echo "Kecepatan dengan jarak $jarak km dan waktu $waktu jam adalah: " . $kecepatan . "<br>";
+echo "Kecepatan dengan jarak $jarak km dan waktu $waktu jam : " . $kecepatan . "<br>";
 
 $jarak = 240;
 $kecepatan = 60;
 $waktuTempuh = JarakAndSuhu::hitungWaktuTempuh($jarak, $kecepatan);
-echo "Waktu tempuh dengan jarak $jarak km dan kecepatan $kecepatan km/jam adalah: " . $waktuTempuh . "<br>";
+echo "Waktu tempuh dengan jarak $jarak km dan kecepatan $kecepatan km/jam : " . $waktuTempuh . "<br>";
 
 $jumlahTagihan = 100;
 $persentaseTip = 10;
 $tip = JarakAndSuhu::hitungTip($jumlahTagihan, $persentaseTip);
-echo "Tip untuk tagihan sebesar $jumlahTagihan dengan persentase tip $persentaseTip% adalah: " . $tip . "<br>";
+echo "Tip untuk tagihan sebesar $jumlahTagihan dengan persentase tip $persentaseTip% : " . $tip . "<br>";
 
 $data = array(2, 4, 6, 8, 10);
 $rataRata = $kalkulator->hitungRataRata($data);
-echo "Rata-rata dari data " . implode(", ", $data) . " adalah: " . $rataRata . "<br>";
+echo "Rata-rata dari data " . implode(", ", $data) . $rataRata . "<br>";
 
 $data = array(2, 4, 6, 8, 10);
 $memori = $kalkulator->hitungMemori($data);
-echo "Total memori dari data " . implode(", ", $data) . " adalah: " . $memori . "<br>";
+echo "Total memori dari data " . implode(", ", $data) . " : " . $memori . "<br>";
 
 $angka = 10.5;
 $desimal = $kalkulator->hitungDesimal($angka);
-echo "Hasil desimal dari angka $angka adalah: " . $desimal . "<br>";
+echo "Hasil desimal dari angka $angka : " . $desimal . "<br>";
 
 $angka = 3;
 $pangkat = 4;
 $hasilPangkat = $kalkulator->hitungPangkat($angka, $pangkat);
-echo "Hasil dari $angka pangkat $pangkat adalah: " . $hasilPangkat . "<br>";
+echo "Hasil dari $angka pangkat $pangkat : " . $hasilPangkat . "<br>";
 
 $angka = 10.5;
 $pecahan = $kalkulator->hitungPecahan($angka);
-echo "Pecahan dari angka $angka adalah: " . $pecahan[0] . " dan " . $pecahan[1] . "<br>";
+echo "Pecahan dari angka $angka : " . $pecahan[0]  . $pecahan[1] . "<br>";
 
 // Hitung arctan
 $nilaiArctan = 0.5;
 $hasilArctan = TriGonoMetri::hitungArctan($nilaiArctan);
-echo "Hasil perhitungan arctan dari " . $nilaiArctan . " adalah: " . $hasilArctan . "<br>";
+echo "Hasil perhitungan arctan dari " . $nilaiArctan . " : " . $hasilArctan . "<br>";
 
 // Hitung cot
 $nilaiCot = 1;
 $hasilCot = TriGonoMetri::hitungCot($nilaiCot);
-echo "Hasil perhitungan cot dari " . $nilaiCot . " adalah: " . $hasilCot . "<br>";
+echo "Hasil perhitungan cot dari " . $nilaiCot . " : " . $hasilCot . "<br>";
 
 // Hitung sec
 $nilaiSec = 0.8;
 $hasilSec = TriGonoMetri::hitungSec($nilaiSec);
-echo "Hasil perhitungan sec dari " . $nilaiSec . " adalah: " . $hasilSec . "<br>";
+echo "Hasil perhitungan sec dari " . $nilaiSec . " : " . $hasilSec . "<br>";
 
 // Hitung csc
 $nilaiCsc = 1.2;
 $hasilCsc = TriGonoMetri::hitungCsc($nilaiCsc);
-echo "Hasil perhitungan csc dari " . $nilaiCsc . " adalah: " . $hasilCsc . "<br>";
+echo "Hasil perhitungan csc dari " . $nilaiCsc . " : " . $hasilCsc . "<br>";
 
 // Hitung arccos
 $nilaiArccos = 0.3;
 $hasilArccos = TriGonoMetri::hitungArccos($nilaiArccos);
-echo "Hasil perhitungan arccos dari " . $nilaiArccos . " adalah: " . $hasilArccos . "<br>";
+echo "Hasil perhitungan arccos dari " . $nilaiArccos . " : " . $hasilArccos . "<br>";
 
 // Hitung arcsin
 $nilaiArcsin = 0.6;
 $hasilArcsin = TriGonoMetri::hitungArcsin($nilaiArcsin);
-echo "Hasil perhitungan arcsin dari " . $nilaiArcsin . " adalah: " . $hasilArcsin . "<br>";
+echo "Hasil perhitungan arcsin dari " . $nilaiArcsin . " : " . $hasilArcsin . "<br>";
 
 // Hitung operasi AND
 $a = true;
 $b = false;
 $hasilAnd = FungsiBoolean::hitungAnd($a, $b);
-echo "Hasil perhitungan operasi AND dari " . ($a ? 'true' : 'false') . " dan " . ($b ? 'true' : 'false') . " adalah: " . ($hasilAnd ? 'true' : 'false') . "<br>";
+echo "Hasil perhitungan" . ($a ? 'true' : 'false')  . ($b ? 'true' : 'false') . " : " . ($hasilAnd ? 'true' : 'false') . "<br>";
 
 // Hitung operasi OR
 $a = true;
 $b = false;
 $hasilOr = FungsiBoolean::hitungOr($a, $b);
-echo "Hasil perhitungan operasi OR dari " . $a . " dan " . $b . " adalah: " . $hasilOr . "<br>";
+echo "Hasil" . $a  . $b . " : " . $hasilOr . "<br>";
 
 // Hitung operasi NOT
 $a = true;
 $hasilNot = FungsiBoolean::hitungNot($a);
-echo "Hasil perhitungan operasi NOT dari " . ($a ? 'true' : 'false') . " adalah: " . ($hasilNot ? 'true' : 'false') . "<br>";
+echo "Hasil" . ($a ? 'true' : 'false') . " : " . ($hasilNot ? 'true' : 'false') . "<br>";
 
 // Hitung operasi XOR
 $a = true;
 $b = false;
 $hasilXor = FungsiBoolean::hitungXor($a, $b);
-echo "Hasil perhitungan operasi XOR dari " . $a . " dan " . $b . " adalah: " . $hasilXor . "<br>";
+echo "Hasil perhitungan operasi XOR dari " . $a  . $b . " : " . $hasilXor . "<br>";
 
 // Hitung modulo
 $a = 13;
 $b = 5;
 $hasilModulo = FungsiBoolean::hitungModulo($a, $b);
-echo "Hasil perhitungan modulo dari " . $a . " dan " . $b . " adalah: " . $hasilModulo . "<br>";
+echo "Hasil perhitungan modulo dari " . $a  . $b . " : " . $hasilModulo . "<br>";
 
 // Hitung rata-rata (mean)
 $data = [10, 20, 30, 40, 50];
 $mean = Statistik::hitungMean($data);
-echo "Rata-rata (mean) dari data " . implode(", ", $data) . " adalah: " . $mean . "<br>";
+echo "Rata-rata (mean) dari data " . implode(", ", $data) . " : " . $mean . "<br>";
 
 // Hitung median
 $data = [5, 10, 15, 20, 25];
 $median = Statistik::hitungMedian($data);
-echo "Median dari data " . implode(", ", $data) . " adalah: " . $median . "<br>";
+echo "Median dari data " . implode(", ", $data) . " : " . $median . "<br>";
 
 // Hitung modus
 $data = [5, 10, 15, 10, 20, 25, 10];
 $modus = Statistik::hitungMode($data);
-echo "Modus dari data " . implode(", ", $data) . " adalah: " . implode(", ", $modus) . "<br>";
+echo "Modus dari data " . implode(", ", $data) . " : " . implode(", ", $modus) . "<br>";
 
 // Hitung standar deviasi
 $data = [10, 20, 30, 40, 50];
 $standarDeviasi = Statistik::hitungStandarDeviasi($data);
-echo "Standar deviasi dari data " . implode(", ", $data) . " adalah: " . $standarDeviasi . "<br>";
+echo "Standar deviasi dari data " . implode(", ", $data) . " : " . $standarDeviasi . "<br>";
 
 // Hitung variansi
 $data = [10, 20, 30, 40, 50];
 $varian = Statistik::hitungVarian($data);
-echo "Variansi dari data " . implode(", ", $data) . " adalah: " . $varian . "<br>";
+echo "Variansi dari data " . implode(", ", $data) . " : " . $varian . "<br>";
 
 // Hitung modus
 $data = [10, 20, 30, 20, 40, 30, 50, 30];
 $modus = Statistik::hitungModus($data);
-echo "Modus dari data " . implode(", ", $data) . " adalah: " . implode(", ", $modus) . "<br>";
+echo "Modus dari data " . implode(", ", $data) . " : " . implode(", ", $modus) . "<br>";
 
 // Hitung GCF
 $angka1 = 24;
 $angka2 = 36;
 $gcf = Statistik::hitungGCF($angka1, $angka2);
-echo "Faktor Persekutuan Terbesar dari $angka1 dan $angka2 adalah: $gcf<br>";
+echo "Faktor Persekutuan Terbesar dari $angka1 dan $angka2 : $gcf<br>";
 
 // Hitung LCM
 $angka1 = 6;
 $angka2 = 8;
 $lcm = Statistik::hitungLCM($angka1, $angka2);
-echo "Kelipatan Persekutuan Terkecil dari $angka1 dan $angka2 adalah: $lcm<br>";
+echo "Kelipatan Persekutuan Terkecil dari $angka1 dan $angka2 : $lcm<br>";
 
 // Operasi pecahan
 $operasi = "1/2 + 3/4";
 $hasil = Fraksi::hitungFraction($operasi);
-echo "Hasil dari operasi pecahan $operasi adalah: $hasil<br>";
+echo "Hasil dari operasi pecahan $operasi : $hasil<br>";
 
 // Pecahan prima
 $numerator = 6;
 $denominator = 8;
 $hasil = Fraksi::hitungPrimeFraction($numerator, $denominator);
-echo "Pecahan prima dari $numerator/$denominator adalah: $hasil<br>";
+echo "Pecahan prima dari $numerator/$denominator : $hasil<br>";
 
 // Basis dan eksponen
 $base = 2;
 $exponent = 3;
 $hasil = Aljabar::hitungEksponen($base, $exponent);
-echo "Hasil dari $base pangkat $exponent adalah: $hasil<br>";
+echo "Hasil dari $base pangkat $exponent : $hasil<br>";
 
 // Contoh Hitung suku-suku yang digabungkan
 $terms = ['2x', '-3y', '4x', '5y', '-x'];
