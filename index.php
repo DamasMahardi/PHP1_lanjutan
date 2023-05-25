@@ -1364,7 +1364,7 @@ echo "Hasil perhitungan arcsin dari " . $nilaiArcsin . " : " . $hasilArcsin . "<
 $a = true;
 $b = false;
 $hasilAnd = FungsiBoolean::hitungAnd($a, $b);
-echo "Hasil perhitungan" . ($a ? 'true' : 'false')  . ($b ? 'true' : 'false') . " : " . ($hasilAnd ? 'true' : 'false') . "<br>";
+echo "Hasil" . ($a ? 'true' : 'false')  . ($b ? 'true' : 'false') . " : " . ($hasilAnd ? 'true' : 'false') . "<br>";
 
 // Hitung operasi OR
 $a = true;
